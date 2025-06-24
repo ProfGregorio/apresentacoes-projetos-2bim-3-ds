@@ -1,0 +1,461 @@
+[
+  {
+    "id": 1,
+    "nome": "The Witcher 3",
+    "sobre": "RPG de mundo aberto",
+    "avaliacao": 5,
+    "capa": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000033071/3f7ee6aa3482b514bd443e116022b038a9728f017916ed37da3f09f731a7d5f2",
+    "comentarios": "Obra-prima!",
+    "recomendado": "sim"
+  },
+  {
+    "id": 2,
+    "nome": "Red Dead Redemption 2",
+    "sobre": "Faroeste e mundo aberto",
+    "avaliacao": 5,
+    "capa": "https://gaming-cdn.com/images/products/11890/orig/red-dead-redemption-2-xbox-one-game-microsoft-store-united-states-cover.jpg?v=1741701573",
+    "comentarios": "Narrativa incrível",
+    "recomendado": "sim"
+  },
+  {
+    "id": 3,
+    "nome": "God of War (2018)",
+    "sobre": "Aventura e mitologia nórdica",
+    "avaliacao": 5,
+    "capa": "https://shadow.tech/app/uploads/2024/12/GODOFWAR_KEYART.jpg",
+    "comentarios": "Muito épico",
+    "recomendado": "sim"
+  },
+  {
+    "id": 4,
+    "nome": "FIFA 23",
+    "sobre": "Simulação de futebol",
+    "avaliacao": 3,
+    "capa": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000047794/40f9e2f6d344d2607d4be72c6c4ebd3c18717ff87a56d6bbc303c42e58dd570d",
+    "comentarios": "Divertido com amigos",
+    "recomendado": "nao"
+  },
+  {
+    "id": 5,
+    "nome": "Minecraft",
+    "sobre": "Criação e sobrevivência",
+    "avaliacao": 4,
+    "capa": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a",
+    "comentarios": "Clássico moderno",
+    "recomendado": "sim"
+  },
+  {
+    "id": 6,
+    "nome": "Cyberpunk 2077",
+    "sobre": "Futurista e imersivo",
+    "avaliacao": 4,
+    "capa": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch-2/70010000095547/f172668ac499434b33917199f2021f753d42b73862d76d3c93d04a474dade847",
+    "comentarios": "Melhorou com atualizações",
+    "recomendado": "sim"
+  },
+  {
+    "id": 7,
+    "nome": "Grand Theft Auto V",
+    "sobre": "Ação e mundo aberto",
+    "avaliacao": 5,
+    "capa": "https://criticalhits.com.br/wp-content/uploads/2015/04/gta-v-ps4-xboxone-pc-1.jpg",
+    "comentarios": "Clássico absoluto",
+    "recomendado": "sim"
+  },
+  {
+    "id": 8,
+    "nome": "Hollow Knight",
+    "sobre": "Aventura e desafio",
+    "avaliacao": 4,
+    "capa": "https://revolutionarena.com/pt-br/wp-content/uploads/sites/2/2021/09/hollow-knight.jpg",
+    "comentarios": "Difícil, mas vale a pena",
+    "recomendado": "sim"
+  },
+  {
+    "id": 9,
+    "nome": "Among Us",
+    "sobre": "Multiplayer de dedução",
+    "avaliacao": 3,
+    "capa": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000036098/758ab0b61205081da2466386940752c70e0e5ea43bd39e8b9b13eaa455c69b7e",
+    "comentarios": "Divertido em grupo",
+    "recomendado": "nao"
+  },
+  {
+    "id": 10,
+    "nome": "Elden Ring",
+    "sobre": "Soulslike em mundo aberto",
+    "avaliacao": 5,
+    "capa": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/capsule_616x353.jpg?t=1748630546",
+    "comentarios": "Desafiador e recompensador",
+    "recomendado": "sim"
+  },
+  {
+    "id": 11,
+    "nome": "Super Mario",
+    "sobre": "Plataforma clássica",
+    "avaliacao": 5,
+    "capa": "https://www.nintendo.com/eu/media/images/10_share_images/portals_3/2x1_SuperMarioHub.jpg",
+    "comentarios": "Um clássico atemporal!",
+    "recomendado": "sim"
+  },
+  {
+    "id": 12,
+    "nome": "Resident Evil IV",
+    "sobre": "Terror e sobrevivência",
+    "avaliacao": 4,
+    "capa": "https://www.residentevildatabase.com/wp-content/uploads/2024/06/resident-evil-jill-leon.jpg",
+    "comentarios": "Assustador e empolgante!",
+    "recomendado": "sim"
+  },
+  {
+    "id": 13,
+    "nome": "God of War ragnarok",
+    "sobre": "Ação mitológica",
+    "avaliacao": 5,
+    "capa": "https://img.hype.games/cdn/209a330a-50f4-48d1-9db7-7485e6a81d87cover.jpg",
+    "comentarios": "Kratos nunca decepciona",
+    "recomendado": "sim"
+  },
+  {
+    "id": 14,
+    "nome": "Dark Souls III",
+    "sobre": "RPG desafiador",
+    "avaliacao": 4,
+    "capa": "https://sm.ign.com/ign_br/screenshot/default/dark-souls-3_xabg.jpg",
+    "comentarios": "Prepare-se para morrer!",
+    "recomendado": "sim"
+  },
+  {
+    "id": 15,
+    "nome": "inside",
+    "sobre": "Indie plataforma",
+    "avaliacao": 5,
+    "capa": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000005804/d0a1b4fa8c16aebc0283c329c42804b0a6dabc6622cfeb956f2eddb3059576bd",
+    "comentarios": "historia muito bem desenvolvida",
+    "recomendado": "sim"
+  },
+  {
+    "id": 16,
+    "nome": "Valorant",
+    "sobre": "FPS competitivo",
+    "avaliacao": 4,
+    "capa": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/c6c50b680c5e1846a9c77f86d5aa357d46584ffe-1920x1080.png?auto=format&fit=fill&q=80&w=1082",
+    "comentarios": "Tático e viciante",
+    "recomendado": "sim"
+  },
+  {
+    "id": 17,
+    "nome": "Assassin's Creed Valhalla",
+    "sobre": "Aventura Viking",
+    "avaliacao": 4,
+    "capa": "https://mh1.com.br/wp-content/uploads/2024/05/assassin-s-creed-valhalla-pc-game-ubisoft-connect-europe-cover.jpg",
+    "comentarios": "Explore a era Viking!",
+    "recomendado": "sim"
+  },
+  {
+    "id": 18,
+    "nome": "Dantes inferno's",
+    "sobre": "Ação e pancadaria",
+    "avaliacao": 5,
+    "capa": "https://pc-gaming.it/wp-content/uploads/2020/03/dantes-inferno-emulatore.jpg.webp",
+    "comentarios": "muito bem feito!",
+    "recomendado": "sim"
+  },
+  {
+    "id": 19,
+    "nome": "The Last of Us",
+    "sobre": "Drama e sobrevivência",
+    "avaliacao": 5,
+    "capa": "https://i.iplsc.com/000G0LP2SP8X3LPR-C322-F4.webp",
+    "comentarios": "Narrativa emocionante",
+    "recomendado": "sim"
+  },
+  {
+    "id": 20,
+    "nome": "The Last of Us II",
+    "sobre": "Drama e sobrevivência",
+    "avaliacao": 4,
+    "capa": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/94b5d8b3165a6fe592e406054b08a2dd24e2f848/capsule_616x353.jpg?t=1746152571",
+    "comentarios": "Narrativa emocionante",
+    "recomendado": "sim"
+  },
+  {
+    "id": 21,
+    "nome": "blasfhemous",
+    "sobre": " brutal jogo de ação",
+    "avaliacao": 5,
+    "capa": "https://i.ytimg.com/vi/TCH5Ix2T6_s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAAYTyfVVr1F_jLC1fXGInpE4yN3Q",
+    "comentarios": "desafiador",
+    "recomendado": "sim"
+  },
+  {
+    "id": 22,
+    "nome": "Ben 10: Protector of Earth",
+    "sobre": "Ação e aventura baseado na série animada",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/ben10.jpg",
+    "comentarios": "Divertido para fãs do desenho",
+    "recomendado": "sim"
+  },
+  {
+    "id": 23,
+    "nome": "Castlevania Collection",
+    "sobre": "Clássicos de ação e plataforma",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/castlevania.jpg",
+    "comentarios": "Nostalgia pura",
+    "recomendado": "sim"
+  },
+  {
+    "id": 24,
+    "nome": "Call of Duty: Black Ops II",
+    "sobre": "FPS com campanha e multiplayer",
+    "avaliacao": 5,
+    "capa": "http://127.0.0.1:5500/img/BO.jpg",
+    "comentarios": "Um dos melhores da série",
+    "recomendado": "sim"
+  },
+  {
+    "id": 25,
+    "nome": "Dragon Ball Xenoverse 2",
+    "sobre": "Luta e RPG com universo de Dragon Ball",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/xeno.jpg",
+    "comentarios": "Ótimo para fãs da saga",
+    "recomendado": "sim"
+  },
+  {
+    "id": 26,
+    "nome": "Far Cry 3",
+    "sobre": "Tiro em primeira pessoa em mundo aberto",
+    "avaliacao": 5,
+    "capa": "https://store-images.s-microsoft.com/image/apps.38505.71220804959101191.bad88979-60b4-40b4-af6d-182d4534c987.f4e71fb2-e446-46e4-8291-e474508a0c71?q=90&w=480&h=270",
+    "comentarios": "Vilão memorável e gameplay viciante",
+    "recomendado": "sim"
+  },
+  {
+    "id": 27,
+    "nome": "Guitar Hero III: Legends of Rock",
+    "sobre": "Jogo musical com guitarra",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/guitarhero.png",
+    "comentarios": "Muito divertido com amigos",
+    "recomendado": "sim"
+  },
+  {
+    "id": 28,
+    "nome": "Marvel's Spider-Man",
+    "sobre": "Ação e aventura com o Homem-Aranha",
+    "avaliacao": 5,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/spiderman.jpg",
+    "comentarios": "Sensação incrível de ser o Aranha",
+    "recomendado": "sim"
+  },
+  {
+    "id": 29,
+    "nome": "Midnight Club 3: DUB Edition",
+    "sobre": "Corrida urbana com personalização",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/midnight.png",
+    "comentarios": "Corridas intensas e estilosas",
+    "recomendado": "sim"
+  },
+  {
+    "id": 30,
+    "nome": "Mortal Kombat: Shaolin Monks",
+    "sobre": "Beat 'em up no universo MK",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/mk.png",
+    "comentarios": "Co-op divertido e brutal",
+    "recomendado": "sim"
+  },
+  {
+    "id": 31,
+    "nome": "Watch Dogs 2",
+    "sobre": "Mundo aberto com foco em hackers",
+    "avaliacao": 4,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/watchdogs2.png",
+    "comentarios": "Mais leve e divertido que o primeiro",
+    "recomendado": "sim"
+  },
+  {
+    "id": 32,
+    "nome": "God of War III",
+    "sobre": "Ação intensa na mitologia grega",
+    "avaliacao": 5,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/gow3.webp",
+    "comentarios": "Épico e brutal",
+    "recomendado": "sim"
+  },
+  {
+    "id": 33,
+    "nome": "Grand Theft Auto: San Andreas",
+    "sobre": "Ação em mundo aberto",
+    "avaliacao": 5,
+    "capa": "http://127.0.0.1:5500/projeto/imgs_projeto/gtasan.webp",
+    "comentarios": "Clássico atemporal",
+    "recomendado": "sim"
+  },
+  {
+    "id": 34,
+    "nome": "Bully",
+    "sobre": "Aventura escolar em mundo aberto",
+    "avaliacao": 4,
+    "capa": "https://images.ctfassets.net/wn7ipiv9ue5v/2EyoE2PWtauQvlR6V8s3Io/45fa598b157904b6b0d8ba7fd87efb40/BULLY_SE_16X9_V03.jpg",
+    "comentarios": "Único e muito divertido",
+    "recomendado": "sim"
+  },
+  {
+    "id": 35,
+    "nome": "Red Dead Redemption",
+    "sobre": "Faroeste com narrativa marcante",
+    "avaliacao": 5,
+    "capa": "https://viciados.net/wp-content/uploads/2024/05/Red-Dead-Redemption-1-RDR1-Rockstar-Games-Launcher-Windows-PC-Computador-Steam-2024.webp",
+    "comentarios": "História incrível e mundo vivo",
+    "recomendado": "sim"
+  },
+  {
+    "id": 36,
+    "nome": "God of War",
+    "sobre": "Ação mitológica com Kratos",
+    "avaliacao": 5,
+    "capa": "https://i.ytimg.com/vi/VXx2aScVbDk/maxresdefault.jpg",
+    "comentarios": "Começo épico da saga",
+    "recomendado": "sim"
+  },
+  {
+    "id": 37,
+    "nome": "God of War II",
+    "sobre": "Continuação direta cheia de ação",
+    "avaliacao": 5,
+    "capa": "https://i.ytimg.com/vi/ovqMayQ2Vtk/maxresdefault.jpg",
+    "comentarios": "Mais brutal e épico",
+    "recomendado": "sim"
+  },
+  {
+    "id": 38,
+    "nome": "God of War: Ascension",
+    "sobre": "Prequel com foco em combate",
+    "avaliacao": 4,
+    "capa": "https://i.ytimg.com/vi/pP0A5QjscD8/maxresdefault.jpg",
+    "comentarios": "Bom combate e gráficos",
+    "recomendado": "sim"
+  },
+  {
+    "id": 39,
+    "nome": "God of War: Ghost of Sparta",
+    "sobre": "Aventura portátil com Kratos",
+    "avaliacao": 4,
+    "capa": "https://guarientoportal.com/wp-content/uploads/2022/06/god-of-war-ghost-of-sparta.jpg",
+    "comentarios": "Surpreendentemente bom no PSP",
+    "recomendado": "sim"
+  },
+  {
+    "id": 40,
+    "nome": "God of War: Chains of Olympus",
+    "sobre": "Prequel portátil da saga",
+    "avaliacao": 4,
+    "capa": "https://i0.wp.com/guarientoportal.com/wp-content/uploads/2023/11/chainsofolympus.jpg?fit=900%2C506&ssl=1",
+    "comentarios": "Ótimo desempenho no PSP",
+    "recomendado": "sim"
+  },
+  {
+    "id": 41,
+    "nome": "Grand Theft Auto: Vice City",
+    "sobre": "Ação nos anos 80 em Vice City",
+    "avaliacao": 5,
+    "capa": "https://viciados.net/wp-content/uploads/2022/07/GTA-Vice-City-Definitive-Edition-Missao-Secreta-2022-Rockstar-Games.webp",
+    "comentarios": "Estilo e trilha sonora icônicos",
+    "recomendado": "sim"
+  },
+  {
+    "id": 42,
+    "nome": "Grand Theft Auto III",
+    "sobre": "O início da era 3D da série",
+    "avaliacao": 4,
+    "capa": "https://meups.com.br/wp-content/uploads/2021/10/GTA-III-20-anos-do-lancamento-900x503.jpg.webp",
+    "comentarios": "Revolucionou o gênero",
+    "recomendado": "sim"
+  },
+  {
+    "id": 43,
+    "nome": "Grand Theft Auto IV",
+    "sobre": "Ação com drama em Liberty City",
+    "avaliacao": 5,
+    "capa": "https://www.comboinfinito.com.br/principal/wp-content/uploads/2025/05/gta-4.jpg",
+    "comentarios": "História profunda e jogabilidade realista",
+    "recomendado": "sim"
+  },
+  {
+    "id": 44,
+    "nome": "The Elder Scrolls V: Skyrim",
+    "sobre": "RPG de mundo aberto, magia e escolhas épicas",
+    "avaliacao": 5,
+    "capa": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000001369/3a41386d4b0999365727a21cc5c13853cfc244abca39b689bb79a339601e48c3",
+    "comentarios": "Liberdade total em um mundo vasto e rico",
+    "recomendado": "sim"
+  },
+  {
+    "id": 45,
+    "nome": "Red Dead Revolver",
+    "sobre": "Ação em terceira pessoa no Velho Oeste",
+    "avaliacao": 4,
+    "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaDpibRCyHeyoD2nIli-kcxKsNvI2ovt_5yjbIS9kpN9uIMrd5lT7kDY-TariWNx4vBKlYYTbjUnYb_a1dTiuOE7t8BpIxeqmIITU0zvnV6Wz9hHgvJbkN4Q-n1eAeRR5jDnpQ7ltry9lE/s1600/maxresdefault.jpg",
+    "comentarios": "O início da saga Red Dead com tiroteios intensos",
+    "recomendado": "sim"
+  },
+  {
+    "id": 46,
+    "nome": "Dark Souls",
+    "sobre": "RPG de ação com alto nível de desafio",
+    "avaliacao": 5,
+    "capa": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000008122/453d17f26995df6bd67d698c90ba2fd27157a61875e1a9730545da23474c6aaf",
+    "comentarios": "Desafiador, sombrio e recompensador",
+    "recomendado": "sim"
+  },
+  {
+    "id": 47,
+    "nome": "Dark Souls II",
+    "sobre": "Sequência intensa com novo mundo e mecânicas",
+    "avaliacao": 4,
+    "capa": "https://p325k7wa.twic.pics/high/dark-souls/dark-souls-2/00-page-setup/ds2_game-thumbnail.jpg?twic=v1/resize=760/step=10/quality=80",
+    "comentarios": "Mais acessível, mas ainda brutal",
+    "recomendado": "sim"
+  },
+  {
+    "id": 48,
+    "nome": "Bloodborne",
+    "sobre": "Ação gótica e visceral em Yharnam",
+    "avaliacao": 5,
+    "capa": "https://i.ytimg.com/vi/-HXZmtYx60Y/maxresdefault.jpg",
+    "comentarios": "Atmosfera sombria e combate rápido",
+    "recomendado": "sim"
+  },
+  {
+    "id": 49,
+    "nome": "Sekiro: Shadows Die Twice",
+    "sobre": "Aventura de ação com foco em furtividade e precisão",
+    "avaliacao": 5,
+    "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGG_A7riaEr07vbwoC2ksjuT_Ahux_Wlz7SQ&s",
+    "comentarios": "Desafio tático com narrativa intensa",
+    "recomendado": "sim"
+  },
+  {
+    "id": 50,
+    "nome": "Assassin's Creed IV: Black Flag",
+    "sobre": "Piratas e assassinos no Caribe",
+    "avaliacao": 5,
+    "capa": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242050/ss_60b905d803c94cd1a1e02bd62eeb6f9e4ca2b3ec.1920x1080.jpg?t=1738250868",
+    "comentarios": "Exploração naval e ação furtiva incríveis",
+    "recomendado": "sim"
+  },
+  {
+    "id": 51,
+    "nome": "Fortnite",
+    "sobre": "Battle Royale multiplayer com construção e combate",
+    "avaliacao": 4,
+    "capa": "https://dropinblog.net/34253310/files/featured/imagem-2024-09-26-103919931.png",
+    "comentarios": "Popular e divertido com atualizações constantes",
+    "recomendado": "sim"
+  }
+]

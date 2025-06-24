@@ -1,0 +1,12 @@
+[
+    {"nome":"Breaking Bad", 
+"img":"https://m.media-amazon.com/images/M/MV5BMTJiMzgwZTktYzZhZC00YzhhLWEzZDUtMGM2NTE4MzQ4NGFmXkEyXkFqcGdeQWpybA@@._V1_QL75_UX500_CR0,0,500,281_.jpg", 
+"inicio":"20/01/2008",
+"fim":null,
+"descricao":"Cancer e Drogas", 
+"jogadores":[{"Vitor": ["Hark", "Kaban", "Lutador"]}, 
+{"Maria": ["Snoopy", "Kobbodi", "Suporte"]}, 
+{"Felipe": ["Lary", "Humana", "Maga"]}, 
+{"Vish": ["Ele", "Deus da Morte", "Cabreiro"]},
+{"Samuca": ["Fodão", "Absurdo", "Paladino"]}]
+}]

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPM - Biblioteca Gamer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #9dbbd8;
+    }
+    .sidebar {
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      background-color: #1f2235;
+      color: white;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      color: white;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #3b3e5a;
+    }
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+    }
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+    .btn-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="text-center mb-4">
+      <img src="logo.png" alt="Logo" style="width: 80px;">
+      <h4>RPM</h4>
+    </div>
+    <a href="#" onclick="mostrarSecao('inicio')"><i class="fa fa-home me-2"></i> INÍCIO</a>
+    <a href="#" onclick="mostrarSecao('criarPost')"><i class="fa fa-pen me-2"></i> CRIAR POST</a>
+    <a href="#" onclick="mostrarSecao('catalogo')"><i class="fa fa-folder me-2"></i> CATÁLOGO</a>
+    <a href="#" onclick="mostrarSecao('sobre')"><i class="fa fa-info-circle me-2"></i> SOBRE</a>
+    <div class="mt-4 text-center">
+      <a href="https://github.com" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="content" id="inicio">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://wallpapercave.com/wp/wp6903960.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+            <h5>The Last of Us - Part I</h5>
+            <p>Uma jornada emocionante por um mundo pós-apocalíptico.</p>
+          </div>
+        </div>
+        <!-- Você pode adicionar mais slides aqui -->
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <section class="container mt-5 text-center" data-aos="fade-up">
+      <h2 class="display-5 fw-bold">Descubra e Compartilhe Jogos Incríveis</h2>
+      <p class="lead">Crie posts, explore o catálogo e monte sua própria biblioteca gamer personalizada.</p>
+      <a class="btn btn-primary btn-lg mt-3" onclick="mostrarSecao('catalogo')">Explorar Catálogo</a>
+    </section>
+  </div>
+
+  <!-- Botão flutuante para criar post -->
+  <button class="btn btn-success btn-lg btn-float shadow" onclick="mostrarSecao('criarPost')">
+    <i class="fa fa-plus"></i> Criar Post
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function mostrarSecao(secao) {
+      alert('Simulação: mudar para seção ' + secao);
+      // Aqui você adicionaria lógica para esconder e mostrar seções
+    }
+    
+
+  </script>
+</body>
+</html>

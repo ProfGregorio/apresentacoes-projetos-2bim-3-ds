@@ -1,0 +1,22 @@
+let pesquisa = "resid";
+const jogos = JSON.parse(localStorage.getItem("jogos"));
+
+let resultados = jogos.filter(jogo => 
+    jogo.nome.toLowerCase().includes(pesquisa.toLowerCase())
+);
+
+localStorage.setItem("jogosPesquisados", JSON.stringify(resultados));
+resultados =[];
+
+
+
+
+let pesquisa = "SUPER"; // Este será substituído por um campo de input futuramente
+const jogos = JSON.parse(localStorage.getItem("jogos"));
+
+for (let i = 0; i < jogos.length; i++) {
+    // Verifica se o nome do jogo inclui o termo pesquisado (tudo em minúsculas)
+    if (jogos[i].nome.toLowerCase().includes(pesquisa.toLowerCase())) {
+        console.log(i, jogos[i].nome);
+    }
+}

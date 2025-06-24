@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<body>
+    <span>Número:</span>
+    <input type="number" id="nmr" name="nmr" />
+    <input type="button" name="bottom" id="bottom" onclick="pevalor();" value="resultado">
+    <p>seu resultado é: </p>
+    <p id="resul"></p>
+    
+    <script>
+
+       function pevalor(){
+        var num1  = Number(document.getElementById('nmr').value)
+        var result = document.getElementById("resul");
+        result.innerHTML=" "
+        for (var a = 1; a<=10;a++){
+            var soma = num1 * a;
+            result.innerHTML+=`<br>${num1}x${a}=${soma}`;
+            console.log(soma);
+        }
+       }
+
+    </script>
+    
+</body>
+</html>

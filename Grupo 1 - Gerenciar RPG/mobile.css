@@ -1,0 +1,277 @@
+/* --- Esse é o body das páginas. As cores são definidas aqui --- */
+
+body{
+    background-color: var(--cor-fundo);
+    background-repeat: repeat;
+    height: 100%;
+    margin: 0;
+    font-family: 'Arvo', 'Crete Round', 'PT Serif', 'Volkhov', serif;
+    color: var(--cor-texto);
+    
+}
+
+/* --- Toda essa parte engloba o nosso menu --- */
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 5px var(--cor-destaque) solid;
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 50px;
+    font-size: x-large;
+    padding: 0;
+}
+.dado20{
+    width: 70px;
+}
+.grimoriobonito{
+    width: 70px;
+}
+
+/* Essa parte serve para o menu mobile (funciona ao clicar no grimório) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--cor-fundo);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+       
+    }
+   
+    .nav-links.active {
+        display: flex;
+        z-index: 999;
+    }
+    .menu-icon {
+        display: block;    
+    }
+ }
+
+/* --- Aqui, nós mexemos com a página de campanhas ---*/
+
+.anunciante_campanhas{
+    text-align: center;
+    text-decoration: underline;
+    color: var(--cor-destaque);
+}
+.campanhas{
+    display: flex;
+    flex-direction: column;
+    text-decoration: underline var(--cor-destaque);
+}
+.campanhas .caixa_da_campanha{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-fundo);
+    color: var(--cor-destaque);
+    border-style: solid;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;
+}
+.campanhas .caixa_da_campanha button{
+    width: 70px;
+    text-decoration: underline white
+}
+
+/* --- Aqui temos a campanha individual, onde mostramos o título, a descrição, o ínico, o fim, e os players que participam da campanha tudo na mesma página --- */
+
+/* Imagem da Campanha */
+
+.borda_imagem{
+    border: 3px solid var(--cor-destaque);
+}
+.class_img_da_campanha{
+    text-align: center;
+    margin-top: 50px;
+}
+.borda_img_da_campanha{
+    border: 3px solid var(--cor-destaque);
+}
+
+@media only screen and (min-width: 600px) {
+    .borda_img_da_campanha{
+        max-width:50%;
+    }
+  }
+
+
+/* Informações Gerais da Campanha */
+
+.class_nome_da_campanha{
+    font-size: 40px;
+    color: var(--cor-destaque);
+}
+.class_desc_da_campanha{
+    color: var(--cor-texto);
+}
+.inicio_fim{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 75px;
+}
+/* --- Seção das Sessões (quase rimou) --- */
+
+.cenas_descricao{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 250px;
+}
+@media only screen and (max-width: 600px) {
+    .cenas_descricao{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 100px;
+    }
+  }
+.borda_cenas_descricao{
+    border: 5px solid var(--cor-destaque);
+    padding: 10px;  
+    
+}
+.sessoes{ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+}
+/* Tabela de Players */
+
+.class_anuncio_de_players{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--cor-destaque);
+}
+
+.tabela_de_personagens_campanha{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+.cor_colunas{
+    color: var(--cor-destaque)
+}
+th, td {
+    word-wrap: break-word;
+    white-space: normal;
+    vertical-align: middle;
+    font-size: 1.1em;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid;
+    border-color: var(--cor-destaque);
+}
+.caixas_de_escolha_players{
+    padding-top: 7px;
+    border: solid 5px;
+    border-radius: 5px;
+    border-color: var(--cor-destaque);
+    justify-content: center;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+}
+.chops{
+    display: flex;
+    justify-content: center;
+}
+/* --- Lista de Jogadores e Personagens --- */
+.butoes{
+    display: flex;
+    justify-content: center;
+}
+.botao-tema {
+    background-color: var(--cor-destaque);
+    color: white;
+    border: solid  var(--cor-texto) px ;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 20px;
+}
+.botao_criar_personagem{
+    color: var(--cor-texto);
+    background-color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+    border-radius: 5px;
+    border-style: none;
+    --bs-btn-hover-bg: var(--cor-destaque);
+}
+.margin_botao_deletar{
+    margin-right: 30px;
+}
+.margin_botao_editar{
+    margin-left: 30px;
+}
+/* --- Classes Gerais e Funcionalidades Adicionais --- */
+
+.pagina_atual{
+    text-decoration: underline var(--cor-destaque);
+}
+h1{
+    text-align: center;
+    font-size: x-large;
+}
+h2{
+    text-align: center;
+    font-size: x-large;
+    color: var(--cor-destaque);
+}
+h3{
+    text-align: center;
+    font-size: 20px;
+    color: var(--cor-destaque)
+}
+p{
+    text-align: center;
+    font-size: larger;
+    color: var(--cor-texto)
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-top: 5px var(--cor-destaque) solid;
+}
+a, .nav-link{
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover, a:active, .nav-link:hover, .nav-link:active{
+    color: var(--cor-destaque);
+}
+.letra_grande{
+    font-size: 30px;
+    color: var(--cor-destaque);
+}
+.letra_pequena{
+    color: var(--cor-texto);
+}
+
+.botoes{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

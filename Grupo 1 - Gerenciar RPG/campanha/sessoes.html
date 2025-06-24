@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../imagens/d20s2.webp">
+    <title>Armazém da Aventura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Crete+Round:ital@0;1&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../mobile.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" target="_self"><img src="../imagens/d20_bonito.png" alt="logo" class="dado20"></a>
+        <ul class="nav-links">
+            <li><a href="../campanha/index.html" target="_self">Mestre</a></li>
+            <li><a href="../jogador/index.html">Jogador</a></li>
+        </ul>
+        
+        <div class="menu-icon"><img class="grimoriobonito" src="../imagens/grimorio_bonito.png" alt=""></div>
+    </nav>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link letra_pequena " aria-current="page" href="detalhes.html">Detalhes</a>
+        </li>
+        <li class="nav-item pagina_atual">
+          <a class="nav-link " href="#">Sessões</a>
+        </li>
+      </ul>
+    
+      <div class="sessoes">
+        <button class="botao-tema" onclick="mudar_sessao(-1)">&lt;</button>
+        <h2 id="titulo_sessao" class="class_nome_da_campanha">SESSÃO 0</h2>
+        <button class="botao-tema" onclick="mudar_sessao(1)">&gt;</button>
+    </div>
+    <div class="sessoes">
+        <button class="botao-tema" onclick="criar_sessao()">Criar Sessão</button>
+</div>
+
+    <div>
+        <article class="cenas_descricao">
+            <section class="gordura_da_cena">
+                <h3 class="letra_grande">CENAS</h3>
+                <button class="botao-tema" id="id_criar_cena">CRIAR CENA</button><br><br>
+                <div id="id_cenas">
+        </div>
+        </section>
+
+            <section>
+                <div>
+                    <h3 class="letra_grande">VOCÊ ESTÁ NA: <h4 id="cena_atual_titulo" class="letra_pequena"></h4></h3><br>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Comente sobre sua cena aqui!" id="descricao_cena" style="height: 300px; width: 300px;">teste testado!!!</textarea>
+                        <label for="descricao_cena">Comente sobre sua cena aqui!</label>
+                </div>
+            </div>
+
+
+        </section>
+        </article>
+    </div>
+
+    <script>
+        const campanha =  JSON.parse(localStorage.getItem("campanha_selecionada"));
+        const campanha_escolhida = campanha.nome.toLowerCase()
+        const campanha_ = campanha_escolhida.replace(" ", "_")
+        let dados = JSON.parse(localStorage.getItem(`sessoes_rpg_${campanha_}`)) || [];
+        let sessao_atual = 0;
+        let cena_selecionada = 0;
+
+        function salvar_dados() {
+            localStorage.setItem(`sessoes_rpg_${campanha_}`, JSON.stringify(dados));
+        }
+
+        function atualizar_interface() {
+            document.getElementById('titulo_sessao').textContent = `SESSÃO ${sessao_atual}`;
+            const lista_cenas = document.getElementById('id_cenas');
+            lista_cenas.innerHTML = '';
+
+            if (!dados[sessao_atual]) dados[sessao_atual] = [];
+            dados[sessao_atual].forEach((cena, index) => {
+                const p = document.createElement('div');
+                p.className = 'borda_cenas_descricao';
+                p.textContent = `Cena ${index + 1}`;
+                p.onclick = () => selecionar_cena(index);
+                lista_cenas.appendChild(p);
+            });
+
+            selecionar_cena(cena_selecionada);
+        }
+
+        function criar_sessao() {
+            if (dados.length >= 50) return alert('Limite de 50 sessões atingido!');
+            dados.push([]);
+            sessao_atual = dados.length - 1;
+            cena_selecionada = 0;
+            salvar_dados();
+            atualizar_interface();
+        }
+
+        function criar_cena() {
+            if (dados[sessao_atual].length >= 15) return alert('Limite de 15 cenas atingido!');
+            dados[sessao_atual].push("");
+            cena_selecionada = dados[sessao_atual].length - 1;
+            salvar_dados();
+            atualizar_interface();
+        }
+
+        function selecionar_cena(index) {
+            cena_selecionada = index;
+            document.getElementById('cena_atual_titulo').textContent = `Cena ${index + 1}`;
+            document.getElementById('descricao_cena').value = dados[sessao_atual][index] || '';
+        }
+
+        function mudar_sessao(direcao) {
+            const nova_sessao = sessao_atual + direcao;
+            if (nova_sessao >= 0 && nova_sessao < dados.length) {
+                sessao_atual = nova_sessao;
+                cena_selecionada = 0;
+                atualizar_interface();
+            }
+        }
+
+        atualizar_interface();
+        document.getElementById("descricao_cena").addEventListener("input", () => {
+        dados[sessao_atual][cena_selecionada] = document.getElementById("descricao_cena").value;
+        salvar_dados();
+        });
+
+        document.getElementById("id_criar_cena").addEventListener("click", criar_cena);
+   </script>
+    <script src="../js/tema.js "></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

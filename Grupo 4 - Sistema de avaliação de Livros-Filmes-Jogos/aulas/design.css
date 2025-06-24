@@ -1,0 +1,55 @@
+html{
+    background-image: url(../img/gifjackson.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+@font-face {
+    font-family:old;
+    src: url(../img/Academic\ M54.ttf);
+}
+h1{
+    color: white;
+    font-size: 65px;
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    font-family: old;
+}
+#tarefa{
+    width: 300px;
+    height: 35px;
+    color: black;
+    border-width: inherit;
+    font-family: old;
+}
+.uni{
+    display: flex;
+    justify-content: center;
+    font-family: old;
+
+}
+.uni2{
+    display: flex;
+    justify-content: center;
+    color: white; font-family: old;
+    font-size: xx-large;
+}
+.uni3{
+    display: flex;
+    justify-content: center;
+    color: white; font-family: old;
+    font-size: xx-large;
+}
+.uni4{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: xx-large; font-family: old;
+}
+.checkbox-grande{
+    width: 25px;
+    height: 22px;
+}
+.jun{
+    
+}

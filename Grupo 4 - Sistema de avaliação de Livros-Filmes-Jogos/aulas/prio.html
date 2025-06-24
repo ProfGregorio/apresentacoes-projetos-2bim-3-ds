@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../aulas/design.css">
+     <link rel="icon" href="../img/emoticon.png">
+     <title>agendas</title>
+ </head>
+ <body>
+     <h1>agenda de tarefas</h1>
+     <div class="uni">
+     <input type="text" id="tarefa" name="tarefa" placeholder="digitar...">
+     <button onclick="limparBarraPesquisa()">Limpar</button>
+     <button id="bottom" onclick="addtarefa()">adicionar</button>
+     </div>
+     <div class="uni2">
+     <ul id="lista" style="list-style: none;"></ul>
+     </div>
+     <div class="jun">
+     <div class="uni3">
+     <p id="ta"></p>
+     </div>
+     <div class="uni4">
+     <ul id="lista2" style="list-style: none;margin: 0px;padding: 0px;"></ul>
+     </div>
+     </div>
+    
+     <script>
+         function addtarefa(){
+             var timestamp = Date.now()
+             var task = document.getElementById("tarefa");
+             var list = document.getElementById("lista");
+             var tagli = document.createElement('li');
+             tagli.setAttribute("id", timestamp);
+             tagli.innerHTML = `                                
+                                <input type="checkbox" class="checkbox-grande" onclick="tarefaConcluida(${timestamp})">
+                                <span>${task.value}</span>
+                                <input type="button" style="color:red;" value="Excluir" onclick="excluir(${timestamp})">
+                                <input type="button" style="color:dodgerblue;" value="editar" onclick="editar(${timestamp})">
+                                `;
+             list.appendChild(tagli);
+         }           
+         function tarefaConcluida(idElementoConcluido){
+            elementoConcluido = document.getElementById(idElementoConcluido);
+            var input_elemento = elementoConcluido.querySelector("input"); 
+
+            if (input_elemento.checked==true){
+                var li_pai = input_elemento.parentElement;
+                li_pai.style.textDecoration="line-through"
+                li_pai.style.color="#0075ff"
+                var tas = document.getElementById("ta");
+                var ul2 = document.getElementById("lista2");
+                var tagli2 = document.createElement("li");
+                tagli2.setAttribute("id", `tarefa_concluida_${idElementoConcluido}`);
+                tas.innerHTML = ("tarefas concluidas");
+                tagli2.innerHTML = (`${elementoConcluido.innerText}`);
+                ul2.appendChild(tagli2);
+                
+            
+            }else{
+                ele = document.getElementById(`tarefa_concluida_${idElementoConcluido}`); 
+                ele.remove();
+                var li_pai = input_elemento.parentElement;
+                li_pai.style.textDecoration="none";
+                li_pai.style.color="white"
+               
+             }
+        }
+        function excluir(idElemento){
+                 var exclui = document.getElementById(idElemento);
+                 exclui.style.justifyItems="left"
+                 exclui.remove()   
+                 ele2 = document.getElementById(`tarefa_concluida_${idElemento}`); 
+                ele2.remove()
+                               
+        }        
+        function limparBarraPesquisa() {
+            document.getElementById('tarefa').value = "";
+        }
+        function editar(idElemento) {
+    var li = document.getElementById(idElemento);
+    var span = li.querySelector("span");
+
+    var textoAtual = span.textContent;
+
+    li.innerHTML = `
+        <input type="checkbox" class="checkbox-grande" onclick="tarefaConcluida(${idElemento})">
+        <input type="text" value="${textoAtual}" id="inputEditar_${idElemento}">
+        <input type="button" value="Salvar" onclick="salvar(${idElemento})">
+        <input type="button" value="Excluir" onclick="excluir(${idElemento})">
+        <input type="button" value="Editar" onclick="editar(${idElemento})">
+    `;
+}
+
+function salvar(idElemento) {
+    var li = document.getElementById(idElemento);
+    var inputEditar = document.getElementById(`inputEditar_${idElemento}`);
+    var novoTexto = inputEditar.value.trim();
+
+    if (novoTexto !== "") {
+        li.innerHTML = `
+            <input type="checkbox" class="checkbox-grande" onclick="tarefaConcluida(${idElemento})">
+            <span>${novoTexto}</span>
+            <input type="button" value="Excluir" onclick="excluir(${idElemento})">
+            <input type="button" value="Editar" onclick="editar(${idElemento})">
+        `;
+    }else{
+        alert("esse campo não pode ser salvo vazio!");
+    }
+}
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/indexcustom.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas</title>
+    <link rel="icon" href="imgs/logo-receita.avif">
+</head>
+<body>
+    
+    <nav class="menu-container">
+        <ul class="menu">
+                <li><a href="#"><img src="./imgs/logo-site.png" alt="Logo Principal do Site - Master Cook"></a></li>
+                <li>
+                    <a class="menu_populares" href="#" onclick="abrirSubMenu('menu_populares')">MAIS POPULARES <span class="seta"></span></a>
+                    <ul class="submenu">
+                        <li><a href="maispop-todos.html">TODOS</a></li>
+                        <li><a href="maispop-simples.html">SIMPLES</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="menu_receitas" href="#" onclick="abrirSubMenu('menu_receitas')">RECEITAS<span class="seta" ></span> </a>
+                    <ul class="submenu ">
+                        <li><a href="receitas-doces.html">DOCES</a></li>
+                        <li><a href="receitas-salgados.html">SALGADOS</a></li>
+                    </ul>
+                
+                </li>
+                <li><a href="#">CADRASTRO</a></li>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">SOBRE</a></li>
+        </ul>
+    </nav>
+
+    <header class="cabecalho-banner">
+        <img src="imgs/fundo-comp.jpg" class="fundo" alt="foto complementar">
+    </header>
+
+    
+  
+
+    <h1 class="fav">RECOMENDAMOS PARA VOCÊ!</h1>
+    
+    <section class="pratos-destaques">
+        <div style="order: 1">
+            <p style="order: 1">STROGONOFF DE<br> FRANGO</p>
+            <img  style="order: 2" class="populares" src="imgs/strogonoff.jpeg" alt="strogonoff">
+        </div>
+        <div style="order: 2">
+            <p style="order: 2">PARMEGIANA DE<br> FRANGO</p>
+            <img style ="order: 1" class="populares" src="imgs/parmegiana.avif" alt="parmegiana">
+        </div>
+    </section>
+    
+
+    <!-- <hr>
+    <section class="pratos-destaques pratos-destaques2">
+        <div style="order: 1">
+            <p style="order: 1">STROGONOFF DE<br> FRANGO</p>
+            <div class="img-container" style="order: 2">
+                <img  class="populares" src="imgs/strogonoff.jpeg" alt="strogonoff">
+            </div>
+        </div>
+        <div style="order: 2">
+            <p style="order: 2">PARMEGIANA DE<br> FRANGO</p>
+            <div class="img-container" style="order: 1">
+                <img class="populares" src="imgs/parmegiana.avif" alt="parmegiana">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <hr >
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <hr>
+    <section class="pratos-destaques3">
+        <div style="order: 1">
+            <p style="order: 1">STROGONOFF DE<br> FRANGO</p>
+            <img  style="order: 2" class="populares" src="imgs/strogonoff.jpeg" alt="strogonoff">
+        </div>
+        <div style="order: 2">
+            <p style="order: 2">PARMEGIANA DE<br> FRANGO</p>
+            <img style ="order: 1" class="populares" src="imgs/parmegiana.avif" alt="parmegiana">
+        </div>
+    </section> -->
+
+
+    <!-- transform: rotate(225deg); /* A seta começa apontando para a direita */ -->
+
+    <script src="submenu.js">
+        
+    </script>
+
+</body>
+</html>

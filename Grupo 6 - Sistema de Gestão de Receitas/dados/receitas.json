@@ -1,0 +1,50 @@
+[
+    {
+        "id":"1",
+        "nome": "Strogonoff",
+        "img": "../img/strogonoff.jpeg",
+        "receita":"",
+        "populares": "sim",
+        "idUsuario": "1",
+        "publicado": "sim",
+        "categoria":"salgado",
+        "tempo_preparo": "45"
+
+    },
+    {
+        "id":"2",
+        "nome": "Macarronada",
+        "img": "../img/rec-macarrao.JPG",
+        "receita":"",
+        "populares": "sim",
+        "idUsuario": "2",
+        "publicado": "nao",
+        "categoria":"salgado",
+        "tempo_preparo": "30"
+
+    },
+    {
+        "id":"3",
+        "nome": "Frango a Milanesa",
+        "img": "../img/rec-frangoamilanesa.JPG",
+        "receita":"",
+        "populares": "sim",
+        "idUsuario": "2",
+        "publicado": "sim",
+        "categoria":"salgado",
+        "tempo_preparo": "40"
+
+    },
+    {
+        "id":"4",
+        "nome": "Lasanha",
+        "img": "../img/rec-lasanha.JPG",
+        "receita":"",
+        "populares": "sim",
+        "idUsuario": "2",
+        "publicado": "sim",
+        "categoria":"salgado",
+        "tempo_preparo": "90"
+
+    }
+]

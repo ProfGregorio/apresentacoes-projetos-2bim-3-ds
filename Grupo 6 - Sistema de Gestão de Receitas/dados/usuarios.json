@@ -1,0 +1,15 @@
+[
+    {
+        "id": "1",
+        "nome": "Guilherme Eufrásio",
+        "email":"guilherme.eufrasio@gmail.com",
+        "senha": "123456"
+    },
+    {
+        "id": "2",
+        "nome": "Nicolas",
+        "email":"nicolas@gmail.com",
+        "senha": "123456"
+    }
+
+]

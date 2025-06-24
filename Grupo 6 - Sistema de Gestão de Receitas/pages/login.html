@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Guilherme Eufrásio, Nicolas Previato">    
+    <title>Login - Master Cook</title>
+    <link rel="icon" href="/img/logo-receita.avif">
+
+ 
+
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../css/paglogin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+    
+<main class="form-signin">
+  <form name="formLogin" id="formLogin" class="formLogin" onsubmit="event.preventDefault();">    
+    <a href="../index.html"><img class="mb-4" src="../img/logo-site.png" alt="" width="72" height="88"></a>
+    <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="usuarioEmail" placeholder="name@example.com">
+      <label for="usuarioEmail">Email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="usuarioSenha" placeholder="Password">
+      <label for="usuarioSenha">Senha</label>
+    </div>
+    <div class="checkbox mb-3">
+    </div>
+    <button class="bota w-100 btn btn-lg btn-primary" onclick="fazerLogin();" >Entrar</button>
+  </form>
+
+  <p class="mt-5 mb-3 text-muted">Caso seja novo por aqui tente se <a href="cadastro.html">Cadastrar</a></p>
+  <p class="mt-5 mb-3 text-muted">&copy;2025</p>
+
+</main>
+
+  <script>
+    function fazerLogin(){
+      //Para evitar que exista algum conteudo nessa localstorage
+      localStorage.removeItem("usuarioLogado");
+
+      if (!localStorage.getItem("usuarios")) {
+        const response =  fetch("../dados/usuarios.json");
+        const dadosIniciais = response.json();
+        localStorage.setItem("jsonCarregado", 'true');    
+        localStorage.setItem("usuarios", JSON.stringify(dadosIniciais));
+      }
+
+      let usuarioEmail = document.getElementById("usuarioEmail").value;
+      let usuarioSenha = document.getElementById("usuarioSenha").value;
+
+      //console.log("USUARIO: ", usuarioEmail, " SENHA: ", usuarioSenha );     
+      const data = localStorage.getItem("usuarios");  
+      usuarios = data ? JSON.parse(data) : [];
+      
+      const usuarioLogado = usuarios.find(u => u.email === usuarioEmail && u.senha ===usuarioSenha);
+      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
+      //console.log("Usuario LOGADO: ", usuarioLogado)
+
+      if (usuarioLogado){
+        //enviar para uma outra tela
+        window.location.href = "./receitas/index.html";
+
+      }else{
+        alert("Usuário não foi localizado!");
+      }
+
+
+      // for(let i =0; i<usuarios.lenght;i++){
+
+      // }
+
+    }
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </body>
+</html>

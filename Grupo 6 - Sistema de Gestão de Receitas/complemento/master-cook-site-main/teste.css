@@ -1,0 +1,81 @@
+/* Estilo para a seta */
+.arrow {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid white; /* Cor da seta */
+    border-bottom: 2px solid white; /* Cor da seta */
+    transform: rotate(45deg); /* A seta começa apontando para a direita */
+    transition: transform 0.3s ease-in-out; /* Animação suave para a rotação */
+    margin-left: 8px; /* Espaço entre o texto e a seta */
+}
+
+/* Estilo para o item de menu */
+.menu-container ul.menu li {
+    max-height: 90px;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    position: relative; /* Necessário para posicionar o submenu */
+}
+
+/* Submenu oculto */
+.menu-container .submenu {
+    background: #4069F8;
+    max-height: 0; /* Começa com a altura mínima */
+    overflow: hidden; /* Garante que o conteúdo não transborde quando não visível */
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 90px;
+    position: absolute;
+    transition: max-height 0.4s ease, opacity 0.4s ease-in-out; /* Melhora a transição */
+    opacity: 0; /* Submenu começa invisível */
+}
+
+/* Quando o submenu é ativado (quando o item de menu tem a classe 'ativo') */
+.menu-container .submenu.ativo {
+    display: flex;
+    flex-direction: column;
+    max-height: 150px; /* A altura máxima que o submenu pode atingir */
+    opacity: 1; /* Agora o submenu aparece */
+    box-shadow: 0px 8px 21px 10px rgba(0, 0, 0, 0.384);
+}
+
+/* Quando o item de menu tem a classe 'ativo', a seta gira para baixo */
+.menu-item.ativo .arrow {
+    transform: rotate(-135deg); /* A seta aponta para baixo */
+}
+
+/* Responsividade para telas menores que 580px */
+@media (max-width: 580px) {
+    .menu-container ul.menu {
+        flex-direction: column; /* Torna o menu vertical */
+        gap: 5px; /* Menor espaçamento entre os itens */
+    }
+
+    .menu-container ul.menu li {
+        padding: 10px;
+    }
+
+    .menu-container ul.menu li a {
+        font-size: 20pt; /* Diminui o tamanho da fonte */
+    }
+
+    .menu-container .submenu {
+        width: 200px; /* Ampliar o submenu para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas maiores que 860px */
+@media (min-width: 860px) {
+    .menu-container ul.menu {
+        gap: 20px; /* Aumenta o espaçamento para telas grandes */
+    }
+
+    .menu-container ul.menu li a {
+        font-size: 26pt; /* Tamanho maior da fonte */
+    }
+}
+

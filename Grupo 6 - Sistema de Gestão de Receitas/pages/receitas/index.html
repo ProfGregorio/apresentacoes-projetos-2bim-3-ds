@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/cadastrado.css">
+        <link rel="icon" href="../../img/logo-receita.avif">
+        <title>MINHAS RECEITAS</title>
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <script>
+            document.addEventListener("DOMContentLoaded", async  function() {
+                let usuarioLogado = null;
+                if (localStorage.getItem("usuarioLogado")) {
+                    usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+                    //console.log(usuarioLogado);
+            
+                    document.title = "Seja bem-vindo " + usuarioLogado.nome;
+                    document.getElementById("nome").innerHTML = "Seja bem-vindo <b>Mestre "+ usuarioLogado.nome+"</b>";
+                } else {
+                    window.location.href = "../login.html";
+                }
+            
+                //LISTAR TODAS AS RECEITAS DAQUELE USUARIO
+                if (!localStorage.getItem("receitas")) {
+                    try {
+                        const responseReceitas = await  fetch("../../dados/receitas.json");
+                        const dadosIniciaisReceitas = await  responseReceitas.json();
+                        localStorage.setItem("receitas", JSON.stringify(dadosIniciaisReceitas));
+                    } catch (erro) {
+                        console.error("Erro ao carregar receitas:", erro);
+                    }
+                }
+                const minhas_receitas = JSON.parse(localStorage.getItem("receitas"));
+                console.log("usuarioLogado ", usuarioLogado);
+                console.log("minhas_receitas ", minhas_receitas);
+            
+                let resultados = minhas_receitas.filter(procurar_receita => 
+                    //procurar_receita.idUsuario.toString().toLowerCase().includes(usuarioLogado.id.toString())
+                    procurar_receita.idUsuario.toString() === usuarioLogado.id.toString()
+            
+                );            
+              
+            
+                localStorage.setItem("minhasReceitasPesquisados", JSON.stringify(resultados));
+            
+            
+                if  (resultados.length> 0){
+                    for (let i = 0; i < resultados.length; i++) {
+                        adicionarElemento(resultados[i],i);        
+                    }
+                }
+               
+            });
+            
+            
+            function adicionarElemento(receita, pos) {      
+            const container = document.getElementById("minhas_receitas");            
+            let divContainer = container.getElementsByClassName('row')[0];
+            
+            // Criar um novo elemento para o conteudo do jogo
+            const sectionReceita = document.createElement("section");
+            
+            sectionReceita.setAttribute("id", `receita-${pos}`);            
+            sectionReceita.classList.add("col", "receita", "item2");
+            
+            sectionReceita.innerHTML = `
+                <div class="card shadow-sm" id=minha_receita-${receita.id}>
+                    
+                    
+                    <img src="${receita.img.search('https://')>=0 ? receita.img : '../../'+receita.img}" alt="foto-${receita.nome}">
+                    <h2 class="fw-normal text-center">${receita.nome}</h2>
+            
+                    <div class="card-body">
+                        <span class="badge text-bg-primary">Popular: ${receita.populares === "sim"? "SIM": "NÃO"}</span>
+                        <span class="badge text-bg-info">Publicado: ${receita.publicado === "sim"? "SIM": "NÃO"}</span>
+            
+                        <p class="card-text">Receita: ${receita.receita}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group"> 
+            
+                                ${receita.publicado === "sim" ? `<button type="button" class="btn btn-sm btn-outline-secondary" onclick="alterarPublicacao(${receita.id}, false);">Despublicar Receita</button>` : `<button type="button" class="btn btn-sm btn-outline-secondary" onclick="alterarPublicacao(${receita.id}, true);">Publicar Receita</button>` }
+                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="gerenciarReceita('visualizar',${receita.id})">Visualizar</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="gerenciarReceita('editar',${receita.id})">Editar</button>
+                            </div>
+            
+            
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar o novo elemento ao container
+            divContainer.appendChild(sectionReceita);       
+            
+            }
+            
+        </script>
+    </head>
+    <body>
+        <nav class="menu-container">
+            <ul class="menu">
+                    <li><a href="../../index.html"><img src="/img/logo-site.png" alt="Logo Principal do Site - Master Cook"></a></li>
+                    <li>
+                        <a class="menu_populares" href="#" onclick="abrirSubMenu('menu_populares')">MAIS POPULARES <span class="seta"></span></a>
+                        <ul class="submenu">
+                            <li><a href="../../pages/maispopu.html">TODOS</a></li>
+                            <li><a href="../../pages/simples.html">SIMPLES</a></li>
+                        </ul>
+                    </li>
+    
+                    <li>
+                        <a class="menu_receitas" href="#" onclick="abrirSubMenu('menu_receitas')">RECEITAS<span class="seta"></span></a>
+                        <ul class="submenu ">
+                            <li><a href="../../pages/doces.html">DOCES</a></li>
+                            <li><a href="../../pages/salgados.html">SALGADOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../pages/sobre.html">SOBRE</a></li>
+            </ul>
+        </nav>
+
+
+        <header style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1 id="nome"></h1>
+                <h2>Minhas receitas:</h2>
+            </div>
+            <button id="btnLogout" class="btn btn-danger">Logout</button>
+        </header>
+
+        <div class="controle-botao">
+            <button class="botao btn btn-lg btn-success" id="buta"><a href="adicionar.html">Adicionar</a></button>  
+        </div>
+        <div class="album py-5 ">
+            <div class="container " id="minhas_receitas">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                </div>
+            </div>
+        </div>
+        <!-- Modal DE AVISO EXIBIÇÃO -->
+        <div class="modal fade" id="modalMinhasReceitas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalMinhasReceitasLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalMinhasReceitasLabel">Atenção</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary pubReceita" id="pubReceita" >SIM</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal GERENCIAR RECEITA-->
+        <div class="modal fade" id="modalGerenciarReceita" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalGerenciarReceitaLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalGerenciarReceitaLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="conteudo_gerenciar_receita">
+                        ...
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary pubReceita" id="pubReceita" >SIM</button>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- Toast de aviso sucesso -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+            <div id="toastReceitaAtualizada" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Cadastro da receita atualizado com sucesso!
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <script>
+            const toastElement = document.getElementById('toastReceitaAtualizada');
+            
+            document.addEventListener("DOMContentLoaded",  function() {
+                console.log("DOMContentLoaded Carregado!");
+            })
+                  
+            function alterarPublicacao(id, publicar = true) {
+                let receitas = JSON.parse(localStorage.getItem("minhasReceitasPesquisados"));
+                const receita = receitas.find(r => r.id.toString() === id.toString());
+                const acao = publicar ? "postar" : "despublicar";
+            
+                document.querySelector('.modal-body').innerText = `Deseja ${acao} a receita ${receita.nome}?`;
+                const modalElementMinhasReceitas = document.getElementById('modalMinhasReceitas');
+                //new bootstrap.Modal(document.getElementById('modalMinhasReceitas')).show();
+                const modal = new bootstrap.Modal(modalElementMinhasReceitas);
+                modal.show();
+            
+            
+                const botaoConfirmar = document.getElementById("pubReceita");
+                const novoBotao = botaoConfirmar.cloneNode(true);
+                botaoConfirmar.parentNode.replaceChild(novoBotao, botaoConfirmar);
+            
+                novoBotao.addEventListener("click", function () {
+                    receita.publicado = publicar ? "sim" : "nao";
+            
+                    let todas_receitas = JSON.parse(localStorage.getItem("receitas"));
+                    const index = todas_receitas.findIndex(c => c.id.toString() === id.toString());
+                    todas_receitas[index] = receita;
+                    localStorage.setItem("receitas", JSON.stringify(todas_receitas));
+            
+                    //Esconde a modal
+                    modal.hide();
+                    
+                    //Exibe a mensagem
+                    const toast = new bootstrap.Toast(toastElement, { delay: 3000 }); // 3 segundos
+                    toast.show();
+            
+                    //Aguarda 1 segundo para atualiza a página
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000)
+            
+                });
+            }
+            
+            
+            function gerenciarReceita(funcao, idReceita){
+                let controle_minhasreceitas =JSON.parse(localStorage.getItem("minhasReceitasPesquisados"));
+            
+                const receita = controle_minhasreceitas.find(r => r.id.toString() === idReceita.toString());
+                //document.getElementById('alunoId').textContent = aluno ? aluno.id : "";
+                document.getElementById("modalGerenciarReceitaLabel").innerText = `GERENCIAR RECEITA ${receita.nome}`
+            
+                
+                document.getElementById('conteudo_gerenciar_receita').innerHTML= `
+                <form name="formGerenciarReceita" id="formGerenciarReceita${receita.id}" >
+                    <label>Nome receita</label><br>
+                    <input type="text"  id="nomeReceita" class="nomereceita form-control" placeholder="Nome da Receita" value="${receita.nome}" ${funcao==="visualizar" ? "readonly" : ""}>
+                    <br>
+                    <label>Imagem</label><br>
+                    <input type="url"  id="imagemReceita" class="image form-control" placeholder="Link da imagem da receita" value="${receita.img}" ${funcao==="visualizar" ? "readonly" : ""}>
+                    <br>
+                    <label>Receita</label><br>
+                    <textarea class="form-control" id="receita" class="descricao form-control" placeholder="Receita" ${funcao==="visualizar" ? "readonly" : ""}  rows="5">${receita.receita}</textarea>
+            
+            
+                    <p id="escolha">POPULAR? </p>
+                    <select name="popularesReceita" id="popularesReceita" class="popular form-control" ${funcao==="visualizar" ? "disabled" : ""}>
+                        <option value="sim" ${receita.populares==="sim" ? "selected" : ""} >SIM</option>
+                        <option value="nao" ${receita.populares==="nao" ? "selected" : ""} >NÃO</option>
+                    </select>
+                    <br>
+                    <div class="organizar_itens">
+                        <p>CATEGORIA:</p>
+                        <select name="categoria" id="categoria" class="categoria form-control" ${funcao==="visualizar" ? "disabled" : ""}>
+                            <option value="salgado"  ${receita.categoria==="salgado" ? "selected" : ""}>Salgado</option>
+                            <option value="doce" ${receita.categoria==="doce" ? "selected" : ""}>Doce</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="organizar_itens">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="receita_publicado" ${receita.publicado==="sim" ? "checked" : ""}  ${funcao==="visualizar" ? "disabled" : ""}>
+                            <label class="form-check-label" for="receita_publicado">PUBLICADO</label>
+                        </div>                    
+            
+                    </div>                
+                    <br>
+                    <label>Tempo de Preparo (em minutos)</label><br>
+            
+                    <input type="text" id="tempo_preparo" class="tempo_preparo form-control" placeholder="Tempo de preparo (minutos)" value="${receita.tempo_preparo}" ${funcao==="visualizar" ? "readonly" : ""}>
+            
+                    <br/>
+                    <br>                
+                </form>            
+            
+                ` 
+            
+                if(funcao==="editar"){
+                    document.getElementById('conteudo_gerenciar_receita').innerHTML+= `
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar edição</button>
+                        <button type="button" class="btn btn-primary pubReceita" id="pubReceita"  onclick="salvarEdicaoReceita('${receita.id}')">SALVAR MODIFICAÇÕES</button>
+                    </div>
+                    `
+                }                              
+            
+                new bootstrap.Modal(document.getElementById('modalGerenciarReceita')).show();
+            }
+            function salvarEdicaoReceita(idReceita){
+                let receitas =JSON.parse(localStorage.getItem("receitas"));
+            
+                const receita_editada = receitas.find(a => a.id.toString() === idReceita.toString());            
+            
+                 // Atualiza o localStorage com as alunos modificadas
+                 const index = receitas.findIndex(r => r.id.toString() === idReceita.toString());
+                 console.log(idReceita, receita_editada, index)
+                 let usuarioLogado2 = JSON.parse(localStorage.getItem("usuarioLogado"));
+                 let receitaEditada ={
+                    id : idReceita,
+                    idUsuario: usuarioLogado2.id,
+                    nome : document.getElementById('nomeReceita').value,
+                    img : document.getElementById('imagemReceita').value,
+                    receita  : document.getElementById('receita').value,
+                    publicado : document.getElementById('receita_publicado').checked ? "sim":"nao" ,
+                    populares : document.getElementById('popularesReceita').value,
+                    categoria : document.getElementById('categoria').value,
+                    tempo_preparo : document.getElementById('tempo_preparo').value
+                 }
+                 
+            
+                receitas[index] = receitaEditada; // Substitui a campanha antiga pela nova             
+                //localStorage.removeItem("minhasReceitasPesquisados");
+                localStorage.setItem('receitas', JSON.stringify(receitas));
+                
+            
+                //AGORA PRECISA ATUALIZAR AS MINHAS RECEITAS
+                let controle_minhasreceitas =JSON.parse(localStorage.getItem("minhasReceitasPesquisados"));
+                const index2 = controle_minhasreceitas.findIndex(r => r.id.toString() === idReceita.toString());
+                controle_minhasreceitas[index2] = receitaEditada; // Substitui a campanha antiga pela nova             
+                localStorage.setItem('minhasReceitasPesquisados', JSON.stringify(controle_minhasreceitas));
+            
+                //Exibe uma mensagem de sucesso ou algo similar
+                //alert("Cadastro da receita atualizado com sucesso!");
+                //location.reload();            
+            
+                const toast = new bootstrap.Toast(toastElement, { delay: 3000 }); // 3 segundos
+                toast.show();
+                const el = document.getElementById('modalGerenciarReceita');
+                const modal = bootstrap.Modal.getInstance(el);
+                if (modal) modal.hide();
+                // Recarrega a página após o toast desaparecer (3 segundos)
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            
+            }      
+
+            document.getElementById('btnLogout').addEventListener('click', function () {
+                // Faça logout
+                localStorage.removeItem("usuarioLogado"); 
+                window.location.href = '../login.html'; // redireciona para tela de login
+            });
+
+        </script>
+        <script src="../../submenu.js"></script>
+    </body>
+</html>

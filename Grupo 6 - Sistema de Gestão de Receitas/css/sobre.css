@@ -1,0 +1,108 @@
+@font-face {
+    font-family: chalet1;
+    src: url(../fontes/ChaletComprime/ChaletComprime\ CologneSixty.ttf);
+}
+
+html{
+    background:linear-gradient(to right,#FAFF9F,#E1BA63) ;
+}
+body{
+    background:linear-gradient(to right,#FAFF9F,#E1BA63) ;
+}
+h1{
+    text-align: center;
+    font-family: chalet1
+}
+h2{
+    text-align: center;
+    font-family: chalet1
+}
+p{
+    text-align: center;
+    font-size: 25px;
+    font-family: chalet1;
+}
+.sobre{
+    text-align: center;
+    font-family: chalet1;
+    color: #002462;
+    font-size: 35px;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.image img{
+    width: 150px;
+    margin: 0;
+}
+.criadores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.criadores img{
+    height: 100%;
+    width: 70%;
+    border-radius: 20px;
+}
+#menu-mobile{
+    background:linear-gradient(to right, #4069F8,#002462) ;
+}
+#icone{
+    background-color:#E1BA63 ;
+}
+#closeMenuBtn{
+    background-color: rgb(255, 22, 22);
+}
+#navbarCollapse{
+    background: linear-gradient(to right, #4068f896,#002462b7);
+}
+@media only screen and (max-width:576px) {
+    @font-face {
+        font-family: chalet1;
+        src: url(../fontes/ChaletComprime/ChaletComprime\ CologneSixty.ttf);
+    }
+    .sobre{
+        text-align: center;
+        font-family: chalet1;
+        color: #002462;
+        font-size: 35px;
+    }
+    .image{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .image img{
+        width: 150px;
+        margin: 0;
+    }
+    .projeto{
+        font-size: 40px;
+        font-family: chalet1;
+        color: black;
+    }
+    .criadores{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .criadores img{
+        height: 100%;
+        width: 70%;
+        border-radius: 20px;
+    }
+    .texto{
+        font-family: chalet1;
+        text-align: center;
+        font-size: 35px;
+    }
+}
+@media (min-width: 576px) {
+    #menu-mobile{
+        display: none;
+    }    
+}

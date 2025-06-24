@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECEITAS SALGADAS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .galeria {
+  columns: 3 200px;
+  column-gap: 15px;
+}
+
+.item {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.item:hover .info {
+  transform: translateY(0);
+}
+
+.info h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.info p {
+  font-size: 14px;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="css/indexcustom.css">
+</head>
+<body>
+
+  
+    <header>
+        <ul class="menu_todos">
+            <img src="imgs/logo-site.png" alt="Logo Principal do Site - Master Cook"></a>
+        </ul>
+    </header>  
+    <h1>RECEITAS DOCES E SOBREMESAS</h1>
+
+  <div class="galeria Masonry-Grid-Layouts">
+    <div class="item">
+      <img src="imgs/BRIGADEIRO-TRAD.JPG" alt="Imagem 1">
+      <div class="info">
+        <h3>Brigadeiro Tradicional</h3>
+        <p>Deliciosa receita de Brigadeiro Tradicional!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/BRIGADEIRO-COLHER.JPG" alt="Imagem 2">
+      <div class="info">
+        <h3>Brigadeiro de Colher</h3>
+        <p>Uma receita cremosa de Brigadeiro de Colher!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/BEIJINHO.JPG" alt="Imagem 3">
+      <div class="info">
+        <h3>Beijinho</h3>
+        <p>Receita de Beijinho, uma delícia!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/GELATINA.JPG" alt="Imagem 4">
+      <div class="info">
+        <h3>Gelatina Colorida</h3>
+        <p>Receita de uma refrescante Gelatina Colorida!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/MOUSSE-MARACUJA.JPG" alt="Imagem 5">
+      <div class="info">
+        <h3>Mousse de Maracujá</h3>
+        <p>Receita de um refrescante Mousse de Maracujá!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/MOUSSE-MORANGO.JPG" alt="Imagem 6">
+      <div class="info">
+        <h3>Mousse de Morango</h3>
+        <p>Receita de um delicioso Mousse de Morango!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/PAVE.JPG" alt="Imagem 7">
+      <div class="info">
+        <h3>Pavê Tradicional</h3>
+        <p>Receita de um delicioso Pavê!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/PAVE-CHOCOLATE.JPG" alt="Imagem 8">
+      <div class="info">
+        <h3>Pavê de Chocolate</h3>
+        <p>Receita de um delicioso Pavê de Chocolate!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="imgs/PUDIM.JPG" alt="Imagem 9">
+      <div class="info">
+        <h3>Pudim</h3>
+        <p>Receita de um delicioso Pudim de Leite Condensado!</p>
+      </div>
+    </div>

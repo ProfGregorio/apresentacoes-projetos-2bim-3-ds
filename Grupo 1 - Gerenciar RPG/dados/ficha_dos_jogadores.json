@@ -1,0 +1,50 @@
+[
+    {
+       "Vitor":[
+          {
+             "Hark":[
+                "Breaking Bad",
+                "Kaban",
+                "Lutador",
+                100,
+                50,
+                "Um soldado militar criado desde sua adolescência para o combate por seu pai adotivo, Vixavix. Sendo coberto de grandes músculos e repleto de ódio, acredita que nada é complicado demais que não possa ser resolvido na base da porrada"
+             ]
+          },
+          {
+             "Natsuki":[
+                "Multiverso da Loucura",
+                "Xamygs",
+                "Suporte",
+                50,
+                100,
+                "Um rebelde de sua espécie, foi contra a natureza conquistadora de seu planeta e por isso, foi expulso pelos mesmos. Protesta pela independência dos planetas não escravizados por seu povo, os Xamygs"
+             ]
+          }
+       ]
+    },
+    {
+       "Froggers":[
+          {
+             "Shark":[
+                "Breaking Good",
+                "Kabum",
+                "Curandeiro",
+                50,
+                200,
+                "Uma pequena espécime aquática vinda do fundo dos mares de Krákou, com a missão de curar quem puder em sua volta. Luta para extinguir o preconceito que pessoas de fora tem de sua raça, Kabum, trazendo uma nova visão de seu povo e evitando que sejam extintos"
+             ]
+          },
+          {
+             "Natsiku":[
+                "Multiverso da Sanidade",
+                "Shymags",
+                "Tanque",
+                200,
+                100,
+                "Com uma obediência sem igual, esse protótipo de super-soldado feito a partir de restos de gigantes caidos fará de tudo para ganhar a guerra dos cento e um anos e tomar os reinos do povo inimigo, os Kromágos. Não importa quantas vidas sejam tomadas ou quantas vezes morra, ele sempre voltará para mais"
+             ]
+          }
+       ]
+    }
+ ]

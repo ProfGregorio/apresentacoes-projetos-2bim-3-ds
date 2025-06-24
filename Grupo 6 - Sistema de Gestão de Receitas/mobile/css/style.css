@@ -1,0 +1,24 @@
+@media screen and (max-width:430px) {
+    html{
+        background:linear-gradient(to right,#FAFF9F,#E1BA63) ;
+    }
+    .a1{
+        align-self: center;
+    }
+    .a1 img{
+        width: 100px;
+    }
+    .cabecalho-banner img{
+        width:100%
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu{
+        display: none;
+    }
+    .cabecalho-banner{
+        align-self: center;
+    }
+}

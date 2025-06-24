@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Guilherme Eufrásio, Nicolas">
+        <title>Cadastro - Master Cook</title>
+        <link rel="icon" href="/img/logo-receita.avif">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <!-- Custom styles for this template -->
+        <link href="../css/pagcadastro.css" rel="stylesheet">
+    </head>
+    <body class="text-center">
+        <main class="form-signin">
+            <form name="formCadUsuario"  id="formCadUsuario"   onsubmit="event.preventDefault();">
+                <a href="../index.html"><img class="mb-4" src="../img/logo-site.png" alt="" width="72" height="88"></a>
+                <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
+                <div class="form-floating">
+                    <input type="text" id="inputNome" class="form-control" placeholder="name" />
+                    <label for="inputNome">Nome de Usuário</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+                    <label for="inputEmail">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="inputSenha" placeholder="Password" required>
+                    <label for="inputSenha">Senha</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" id="inputRepitaSenha" class="form-control" placeholder="Password" required/>
+                    <label for="inputRepitaSenha">Repita sua Senha</label>
+                </div>
+                <br>
+                <button class="bota w-100 btn btn-lg btn-primary" onclick="cadastrarUsuario();">Cadastrar</button>
+                <p class="mt-5 mb-3 text-muted">&copy;2025</p>
+            </form>
+            <!-- Toast de aviso sucesso -->
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+                <div id="toastUsuarioCadastrado" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Usuário cadastrado com sucesso! <br>Em instantes vocÊserá redirecionado para o login!
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="../js/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <script> 
+            const data = localStorage.getItem("usuarios");  
+            usuarios = data ? JSON.parse(data) : [];
+            const toastElement = document.getElementById('toastUsuarioCadastrado');
+            
+              function cadastrarUsuario (){
+                let  senhaUsuario = document.getElementById("inputSenha").value;
+                let  repitasenha = document.getElementById("inputRepitaSenha").value;
+                if(senha.length>0){
+                  if (senhaUsuario===repitasenha){
+                    let  emailUsuario = document.getElementById("inputEmail").value;
+                    const usuarioExiste = usuarios.find(u => u.email === emailUsuario);
+                    if(usuarioExiste){
+                      alert("EMAIL JÁ CADASTRADO");
+                    }else{
+                      let  nomeUsuario = document.getElementById("inputNome").value;
+                      let id = Date.now();
+                      const novoUsuario = {
+                        id: id.toString(), nome:nomeUsuario, email:emailUsuario, senha:senhaUsuario
+                      };
+            
+                      const index = usuarios.findIndex(a => a.id === novoUsuario.id);
+                      if (index !== -1) usuarios[index] = novoUsuario;
+                      else usuarios.push(novoUsuario);
+                      salvarUsuarios();
+            
+                    }       
+            
+                  }else{
+                    alert("As senhas informadas são diferentes!");
+                  }
+                }            
+            
+              }
+              function salvarUsuarios() {
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                document.getElementById("formCadUsuario").reset();
+                const toast = new bootstrap.Toast(toastElement, { delay: 2000 }); // 3 segundos
+                toast.show();
+                //Aguarda 1 segundo para redirecionar para o login
+                //alert("Usuário Cadastrado com SUCESSO!");
+                setTimeout(() => {
+                  window.location.href = "login.html"
+                }, 1000)          
+              }
+        </script>
+    </body>
+</html>

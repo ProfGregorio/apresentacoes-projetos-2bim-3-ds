@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teste.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <nav class="menu-container">
+        <ul class="menu">
+            <li><a href="#"><img src="imgs/logo-site.png" alt="Logo Principal do Site - Master Cook"></a></li>
+            <li><a href="#">MAIS POPULARES</a></li>
+            <li class="menu-item"> <!-- Adiciona a classe menu-item para o item "RECEITAS +" -->
+                <a href="#" onclick="abrirSubMenu()">RECEITAS + <span class="arrow"></span></a> <!-- A seta será inserida aqui -->
+                <ul class="submenu">
+                    <li><a>A</a></li>
+                    <li><a>B</a></li>
+                    <li><a>C</a></li>
+                </ul>
+            </li>
+            <li><a href="#">CADRASTRO</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">SOBRE</a></li>
+        </ul>
+    </nav>
+    <script src="teste.js"></script>
+</body>
+</html>

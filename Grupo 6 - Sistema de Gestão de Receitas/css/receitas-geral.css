@@ -1,0 +1,243 @@
+@font-face {
+    font-family: chalet1;
+    src: url(../fontes/ChaletComprime/ChaletComprime\ CologneSixty.ttf);
+}
+
+@font-face {
+    font-family: chalet2;
+    src: url(../fontes/ChaletComprime/ChaletLondonNineteenSixty.ttf);
+}
+html{
+    background:linear-gradient(to right,#FAFF9F,#E1BA63) ;
+}
+@media (max-width:580px)and(min-width:860px){
+    
+}
+body{
+    margin: 0%;
+    background:linear-gradient(to right,#FAFF9F,#E1BA63) ;
+}
+
+
+
+
+.menu-container{
+    background:linear-gradient(to right,#4069F8,#002462) ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    font-family: chalet1;
+}
+
+.menu-container ul.menu{
+    list-style: none;    
+    width: 100%;    
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+
+}
+.menu-container ul.menu li{    
+    max-height:90px ;
+    padding:5px 20px;
+}
+.menu-container ul.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 26pt;
+}
+.menu-container ul.menu li a:hover{
+    color: #cbcbcb;
+    /* background-color: #ff0000; */
+}
+
+
+.menu-container ul.menu li:first-child,.menu-container ul.menu li:last-child{
+    flex-grow: 2;    
+}
+
+.menu-container ul.menu > li:last-child{
+    text-align: right;
+    padding-right: 20px;
+}
+.menu-container ul.menu li img{ 
+    width: 75px;
+}
+
+.menu-container .submenu{
+    background:#264bce;
+    max-height: 0; /* Começa com a altura mínima */
+    overflow: hidden; /* Garante que o conteúdo não transborde quando não visível */
+    display: none;
+    list-style: none;   
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: auto;
+    transition: opacity 0.4s ease, visibility 0s 0.4s; /* Opacidade com transição e visibility com delay */
+    
+}
+
+.menu-container .submenu li{
+    width: 88px;
+}
+.menu-container .submenu.ativo{    
+    display: flex;
+    flex-direction: column; 
+    max-height: 150px; /* A altura máxima que o submenu pode atingir */
+    box-shadow: 0px 8px 20px 5px rgba(0, 0, 0, 0.274)
+    
+}
+
+.menu-container .submenu ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20pt;
+    padding: 10px 20px;
+    display: block; /* Faz o link ocupar toda a largura do item */
+}
+.menu-container .submenu li:hover {
+    background-color: #020f4221; /* Cor de fundo ao passar o mouse */
+    
+}
+
+.menu-container .submenu ul li a:hover{
+    color: #ff0000;
+    font-size: 20pt;
+    padding: 10px 20px;
+    display: block; /* Faz o link ocupar toda a largura do item */
+}
+
+.seta{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid white; /* Cor da seta */
+    border-bottom: 2px solid white; /* Cor da seta */       
+    transform: rotate(225deg); /* A seta começa apontando para a direita */
+    transition: transform 0.3s ease-in-out; /* Animação suave para a rotação */
+    margin-left: 14px; /* Espaço entre o texto e a seta */
+    margin-bottom: 4px;
+}
+
+.seta.fechado{
+    transform: rotate(225deg); /* A seta começa apontando para a direita */
+}
+.seta.aberto{
+    transform: rotate(45deg); /* A seta começa apontando para a direita */
+}
+
+.cabecalho-banner img{
+    width: 100%;
+}
+
+.fav{
+    text-align: center;
+    color: #002462;
+    font-family: chalet1;
+    letter-spacing: 0px;
+    font-size: 35px;
+}
+    
+
+
+.opcoes a{
+    font-family: chalet1;
+    color: white;
+    list-style: none;
+    font-size: xx-large;
+    text-decoration: none;
+}
+.pratos-destaques {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #002462;
+    font-family: chalet1;
+    letter-spacing: 0px;
+    font-size: 35px;
+    overflow: hidden;
+}
+.pratos-destaques div {
+    display: flex;
+    align-items: center;
+    
+}
+.pratos-destaques div p{
+    margin:15px;
+}
+.pratos-destaques .populares{
+    width: 500px;
+    height: 350px;
+    border-radius: 33px;
+    margin: 15px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: 0.5s;
+}
+
+.pratos-destaques .populares:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+
+/* pagina "TODOS" */
+/* pagina "TODOS" */
+/* pagina "TODOS" */
+/* pagina "TODOS" */
+/* pagina "TODOS" */
+/* pagina "TODOS" */
+/* pagina "TODOS" */
+
+
+
+.menu_todos img{ 
+    
+    height: 100%;
+    width: 140px;
+    margin-right: 34px;
+}
+.menu_todos{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #eb0606;
+    font-family: chalet1;
+    letter-spacing: 0px;
+    font-size: 35px;
+    border-radius: 33px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: 0.5s;
+    margin: 15px 0;
+    
+    
+}
+
+.todas_as_receitas{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #ffffff;
+    font-family: chalet1;
+    letter-spacing: 0px;
+    font-size: 35px;
+    position: fixed;
+    }
+
+h1, h1.tituloPrincipal{
+    font-family: chalet1;
+    text-align: center;
+    color: #002462;
+    font-family: chalet1;
+    letter-spacing: 0px;
+    font-size: 39px;
+    background-color: #ffae00;
+    font-weight: bold;
+}

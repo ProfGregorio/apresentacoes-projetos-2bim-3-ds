@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleNE.css">
+</head>
+<body>
+
+    <nav class="nav-br">
+        <div class="logo">
+            <img src="img/Captura de Tela (1)-Photoroom.png" alt="Logo" title="Coração - Logo">
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link">Reanimação Cardiopulmonar</a></li>
+            </ul>
+        </div>
+        <img id="icon" src="./img/menuIMG.png" alt="Botão 'Sanduíche' para sinalizar o menu." onclick="menumb()">
+    </nav>
+
+    <nav class="nav-mobile">
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link">Reanimação Cardiopulmonar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="container">
+        <div class="item item1">
+            <a>SAMU</a>
+            <a class="botao1">192</a>
+        </div>
+        <div class="item item2"> 
+            <a>BOMBEIRO</a>
+                    <a class="botao2">193</a>
+        </div>
+        <div class="item item3"> 
+            <a>CVV</a>
+            <a class="botao3">188</a>
+        </div>
+        <div class="item item4"> 
+            <a>POLÍCIA MILITAR</a>
+            <a class="botao4">190</a>
+        </div>
+
+    </div>
+    
+<script type="text/javascript">
+        function menumb() {
+            let menu = document.querySelector('.mobile-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block'
+        }
+
+        let botao1 = document.querySelector('.botao1');
+        let botao2 = document.querySelector('.botao2');
+        let botao3 = document.querySelector('.botao3');
+        let botao4 = document.querySelector('.botao4');
+
+        function samu() {window.location.href = "tel:192"}
+        function bomb() {window.location.href = "tel:193"}
+        function cvv() {window.location.href = "tel:188"}
+        function pm() {window.location.href = "tel:190"}
+
+        botao1.addEventListener('click', samu);
+        botao2.addEventListener('click', bomb);
+        botao3.addEventListener('click', cvv);
+        botao4.addEventListener('click', pm);
+    </script>
+    
+</body>
+</html>

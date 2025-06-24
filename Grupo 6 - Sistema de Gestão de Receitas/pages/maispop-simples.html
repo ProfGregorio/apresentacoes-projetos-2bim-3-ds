@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECEITAS SIMPLES</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .galeria {
+  columns: 2 200px;
+  column-gap: 27px;
+}
+
+.item {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.item:hover .info {
+  transform: translateY(0);
+}
+
+.info h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.info p {
+  font-size: 14px;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="../css/receitas-geral.css">
+</head>
+<body>
+
+  
+    <header>
+        <ul class="menu_todos">
+            <a href="../index.html"><img src="../img/logo-site.png" alt="Logo Principal do Site - Master Cook"></a>
+        </ul>
+    </header>  
+    <h1>RECEITAS RÁPIDAS E FÁCEIS!!</h1>
+
+  <div class="galeria Masonry-Grid-Layouts">
+    <div class="item">
+      <img src="../img/rec-macarrao.JPG" alt="Imagem 1">
+      <div class="info">
+        <h3>Macarronada</h3>
+        <p>Desliciosa receita de macarrão com carne moída!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="../img/rec-frangoamilanesa.JPG" alt="Imagem 4">
+      <div class="info">
+        <h3>Frango a Milanesa</h3>
+        <p>Receita den um bom e velho frango a milanesa!</p>
+      </div>
+    </div>
+
+
+
+    <div class="item">
+      <img src="../img/strogonoff.jpeg" alt="Imagem 6">
+      <div class="info">
+        <h3>Strogonoff de Frango</h3>
+        <p>Receita de um suculento Strogonoff de Frango</p>
+      </div>
+    </div>

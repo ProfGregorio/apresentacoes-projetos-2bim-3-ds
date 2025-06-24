@@ -1,0 +1,255 @@
+@font-face {
+  font-family: dod;
+  src: url("./imgs_projeto/FrontPageNeue.otf");
+}
+@font-face {
+  font-family: ass;
+  src: url("./imgs_projeto/Montserrat-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.geral{
+      margin-left: 230px;
+}
+.conteudo{
+  margin-left: 0px;
+}
+.asi{
+  font-family: ass;
+}
+.sob{
+  font-family: ass;
+}
+a{
+  text-decoration: none
+}
+body {
+  background-color: #8caccb;
+  color: #053667;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+  
+}
+
+
+body.dark-mode {
+  background-color: #1E1E2E;
+  color: #8D99AE;
+}
+
+button {
+  border: none; 
+  background: none; 
+  outline: none;
+  padding: 0; 
+  cursor: pointer;
+}
+.menu-mobile{
+    display: none;
+}
+.menu-desktop{
+    display: block;
+}
+.modi{
+    color: white;
+}
+h2,h1,h5,p{
+  font-family: dod;
+}
+
+
+.jj{
+   display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    
+}
+.menu-vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 215px;
+  background-color: #232539;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.menu-vertical .logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.menu-vertical nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu-vertical nav ul li {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.menu-vertical nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  transition: background 0.3s;
+}
+
+.menu-vertical nav ul li a:hover {
+  background-color: #1b1d2e;
+  border-left: 4px solid #535788;
+}
+.menu-vertical .submenu-toggle:hover {
+  background-color: #1b1d2e;
+  border-left: 4px solid #535788;
+}
+
+.menu-vertical nav ul li img {
+  width: 30px;
+}
+
+.github-icon {
+  width: 70px;
+  margin-top: 40px;
+}
+/* .bi-github:hover{
+background-color: #1b1d2e;
+ transform: scale(1.03);
+  box-shadow: 0 0 15px #b4b1c7;
+  border-radius: 20px;
+} */
+.mudar-cor{
+  width: 75px; 
+}
+
+.conteudo {
+  margin-left: 220px;
+  padding: 30px;
+  flex: 1;
+}
+
+
+.estrela {
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.estrela.selecionada {
+  color: #ffc107;
+}
+
+
+.game-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .game-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-weight: bold;
+    }
+
+    .game-card:hover .game-title {
+      opacity: 1;
+    }
+
+.menu-vertical ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.menu-vertical li {
+  margin-bottom: 15px;
+}
+
+
+
+.menu-vertical a,
+.menu-vertical button {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.submenu li a {
+  padding: 8px 10px;
+  display: block;
+  font-size: 14px;
+}
+
+.submenu.show {
+  display: block;
+}
+a, button, .card {
+  transition: all 0.5s ease-in-out;
+}
+.card {
+  background-color: #2B2D42;
+  color: #FFFFFF;
+  border: 1px solid #444;
+  transition: transform 0.3s;
+}
+
+.btn-primary {
+  background-color: #140597;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #0e005c;
+}
+#SOBRE{
+  font-family: god;
+}
+
+.btn-primary:hover {
+  background-color: #12023d;
+}
+.sob{
+    font-size:  x-large;
+    text-align: center;
+    width: 70%;
+}

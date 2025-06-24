@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+</head>
+<body>
+    <input type="number" id="soma" name="soma"/>
+    <span>+</span>
+    <input type="number" id="soma1" name="soma1"/>
+    <input type="button" name="bottom" id="bottom" onclick="pevalor();" value="somar">
+    <p>seu resultado é: </p><p id="resul"></p>
+
+    <script>
+        function pevalor() {
+            var elemento_num1  = document.getElementById('soma')
+            var elemento_num2 = document.getElementById('soma1')
+            var num1 = Number(elemento_num1.value)
+            var num2 = Number(elemento_num2.value)
+            var somados = num1+num2;
+            document.getElementById('resul').innerHTML=somados
+        }
+        </script>
+    
+</body>
+</html>

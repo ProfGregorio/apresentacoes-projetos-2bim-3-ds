@@ -1,0 +1,99 @@
+@font-face {
+    font-family: chalet1;
+    src: url(../fontes/ChaletComprime/ChaletComprime\ CologneSixty.ttf);
+}
+html{
+    background:linear-gradient(to right,#FAFF9F,#E1BA63) ;;
+}
+body{
+    background:linear-gradient(to right,#FAFF9F,#E1BA63) ;
+}
+form{
+    justify-items: center;
+}
+.logo-principal{
+    display: flex;
+    justify-content: center;
+}
+.logo-principal img{
+    width: 150px;
+    margin-right: 40px;
+}
+.adicionar-receita{
+    font-family: chalet1;
+    background-color: #ffae00;
+    text-align: center;
+    color: #002462;
+}
+.nomereceita{
+    display: block;
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.descricao{
+    display: block;
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    height: 90px;
+    line-height: 40px; 
+}
+.image{
+    display: block;
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.popular{
+    height:30px;
+    border-radius: 6px;
+}
+.categoria{
+    height:30px;
+    border-radius: 6px;
+}
+.butao{
+    
+    justify-self: center;
+}
+.add{
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgb(46, 230, 46);
+    height: 35px;
+}
+p{
+    font-size: 35px;
+    font-family: chalet1;
+    display: inline-block;
+}
+@media screen and (max-width:573px){
+    .nomereceita {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+        justify-self: left;
+    }
+    .descricao {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+        justify-self: left;
+    }
+    .image {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        box-sizing: border-box;
+        justify-self: left;
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "Vitor": {
+      "Fulano": [
+        "Breaking Bad",
+        "Humano",
+        "Lutador",
+        100,
+        50,
+        "Um soldado militar criado desde sua adolescência para o combate por seu pai adotivo, Vixavix. Sendo coberto de grandes músculos e repleto de ódio, acredita que nada é complicado demais que não possa ser resolvido na base da porrada"        
+      ],
+      "Siclano": [
+        "Multiverso da Loucura",
+        "Ogro",
+        "Suporte",
+        50,
+        100,
+        "Um rebelde de sua espécie, foi contra a natureza conquistadora de seu planeta e por isso, foi expulso pelos mesmos. Protesta pela independência dos planetas não escravizados por seu povo, os Xamygs"
+      ]
+    },
+    "Maria": {
+        "Beltrano": [
+          "Breaking Bad",
+          "Humano",
+          "Lutador",
+          100,
+          50,
+          "Um soldado militar criado desde sua adolescência para o combate por seu pai adotivo, Vixavix. Sendo coberto de grandes músculos e repleto de ódio, acredita que nada é complicado demais que não possa ser resolvido na base da porrada"        
+        ],
+        "Deltrano": [
+          "Multiverso da Loucura",
+          "Ogro",
+          "Suporte",
+          50,
+          100,
+          "Um rebelde de sua espécie, foi contra a natureza conquistadora de seu planeta e por isso, foi expulso pelos mesmos. Protesta pela independência dos planetas não escravizados por seu povo, os Xamygs"
+        ]
+      }    
+  }

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../projeto/modelo.css" />
+      <link rel="stylesheet" href="../projeto/celular.css" media="screen and (max-width: 768px)">
+      <title>Index: Biblioteca de Jogos</title>
+   </head>
+   <body>
+   <div class="container-fluid">
+      <div class="menu-mobile">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+        <i class="bi bi-list"></i>
+      </button>
+      
+      <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel" style="width: 237px;">
+        <div class="offcanvas-header" style="background-color: #232539;">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;
+          background-color: white;"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: #232539;">
+          <div>
+            <aside class="menu-vertical" style="width: 220px;">
+              <a href="index.html">
+              <img src="./imgs_projeto/10.png" alt="logotipo da biblioteca" class="logo"/>
+              </a>
+              <nav>
+                  <ul>
+                      <li><a href="index.html"><i class="bi bi-house"></i> INÍCIO</a></li>
+                      <li><a href="criar-post.html"><i class="bi bi-folder-symlink"></i> CRIAR</a></li>
+                      <li class="has-submenu">
+                          <button class="submenu-toggle" id="sub"><i class="bi bi-folder2"></i> CATÁLOGO</button>
+                          <ul class="submenu">
+                               <li><a href="./criados.html" id="catal" ><i class="bi bi-search"></i> PESQUISAR</a></li>
+                              <li><a href="./tt.html"><i class="bi bi-bank"></i> MINHA BIBLIOTECA</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="./sobre.html" ><i class="bi bi-info-circle"></i> SOBRE</a></li>
+                  </ul>
+                  <div class="jj mt-3">
+                      <a href="./github.html"  aria-label="Ver GitHub dos desenvolvedores">
+                      <i class="bi bi-github" style="color: white; font-size: 400%;"></i>
+                      </a>
+                      <br />
+                      <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro" style="background: none; border: none;">
+                      <i class="bi bi-brightness-low" style="color: white; font-size: 410%;"></i>
+                      </button>
+                  </div>
+              </nav>
+          </aside>
+          </div>
+        </div>
+      </div>
+      </div>
+
+       <div class="menu-desktop">
+            <aside class="menu-vertical" style="width: 220px;">
+              <a href="index.html">
+              <img src="./imgs_projeto/10.png" alt="logotipo da biblioteca" class="logo"/>
+              </a>
+              <nav>
+                  <ul>
+                      <li><a href="index.html"><i class="bi bi-house"></i> INÍCIO</a></li>
+                      <li><a href="criar-post.html"><i class="bi bi-folder-symlink"></i> CRIAR</a></li>
+                      <li class="has-submenu">
+                          <button class="submenu-toggle" id="sub"><i class="bi bi-folder2"></i> CATÁLOGO</button>
+                          <ul class="submenu">
+                             <li><a href="./criados.html" id="catal" ><i class="bi bi-search"></i> PESQUISAR</a></li>
+                          <li><a href="./tt.html"><i class="bi bi-bank"></i> MINHA BIBLIOTECA</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="./sobre.html" ><i class="bi bi-info-circle"></i> SOBRE</a></li>
+                  </ul>
+                  <div class="jj mt-3">
+                      <a href="./github.html"  aria-label="Ver GitHub dos desenvolvedores">
+                      <i class="bi bi-github" style="color: white; font-size: 400%;"></i>
+                      </a>
+                      <br />
+                      <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro" style="background: none; border: none;">
+                      <i class="bi bi-brightness-low" style="color: white; font-size: 410%;"></i>
+                      </button>
+                  </div>
+                 </nav>
+          </aside>
+         </div>
+  </div>
+    <main class="conteudo">
+     <div class="container my-4">
+        <h1>Minha Biblioteca de Jogos</h1>
+        <div id="listaJogosTT" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"></div>
+        <div class="alert alert-danger aviso" style="display:none;" role="alert">
+            Nenhum jogo cadastrado!
+        </div>
+    </div>
+
+    
+         <div id="Criar" class="secao">
+            <div class="container mt-4">
+               <h2 class="mb-4 hdo">Criar Postagem</h2>
+               <form class="row g-3">
+                  <div class="asi">
+                  <div class="col-md-6">
+                     <label for="nome_jogo" class="form-label">Nome do Jogo</label>
+                     <input type="text" class="form-control" id="nome_jogo" name="nome_jogo" required autocomplete="off" />
+                  </div>
+                  <div class="col-md-6">
+                     <label for="img_jogo" class="form-label">URL da Imagem de Capa</label>
+                     <input type="url" class="form-control" id="img_jogo" name="img_jogo" placeholder="https://exemplo.com/imagem.jpg" autocomplete="off" />
+                  </div>
+                  <div class="col-12">
+                     <label for="inputSobreJogo" class="form-label">categoria do jogo</label>
+                     <input type="text" class="form-control" id="inputSobreJogo" name="inputSobreJogo"  placeholder="Categoria do jogo" autocomplete="off" />
+                  </div>
+                  <div class="col-12">
+                     <label class="form-label">Avaliação</label>
+                     <div class="classificacao" style="display: flex;flex-direction: row-reverse;justify-content: flex-end;">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                     </div>
+                  </div>
+                  <div class="col-12">
+                     <label for="inputSobreJogo" class="form-label">Descrição sobre o jogo</label>
+                     <textarea class="form-control" id="floatingTextarea2" placeholder="Descrição do jogo" style="height: 100px;"></textarea>
+                  </div>
+                  <div class="col-12">
+                     <label for="recomendado_jogo">Recomendado</label>
+                     <select id="recomendado_jogo" name="recomendado_jogo" form="carform">
+                        <option value="sim">SIM</option>
+                        <option value="nao">NÃO</option>
+                     </select>
+                  </div>
+                  </div>
+                  <div class="col-12">
+                     <button type="button" class="btn btn-primary" onclick="criarpost()">Postar</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+     
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style=" background-color: #63b963;">
+            <div class="toast-header">
+               <!-- <img src="..." class="rounded me-2" alt="..."> -->
+               <strong class="me-auto">Post criado com sucesso!</strong>
+               <small >Criado neste momento</small>
+               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="tituloPost"></div>
+         </div>
+      </div>
+          <script>
+        function carregarJogosTT() {
+            let jogos = JSON.parse(localStorage.getItem("jogos")) || [];
+            let container = document.getElementById("listaJogosTT");
+            let aviso = document.querySelector('.aviso');
+            container.innerHTML = '';
+
+            if (jogos.length === 0) {
+                aviso.style.display = '';
+            } else {
+                aviso.style.display = 'none';
+                jogos.forEach(jogo => {
+                    let section = document.createElement("section");
+                    section.classList.add("col", "jogo", "item2");
+                    section.innerHTML = `
+                        <div class="card shadow-sm">
+                            <img src="${jogo.capa}" alt="foto-${jogo.nome}" class="img-fluid">
+                            <h2 class="fw-normal text-center">${jogo.nome}</h2>
+                            <div class="card-body">
+                                <p class="card-text"><strong>Categoria:</strong> ${jogo.sobre}</p>
+                                <p class="card-text"><strong>Descrição:</strong> ${jogo.comentarios || ""}</p>
+                                <label class="form-label">Avaliação</label>
+                                <div class="classificacao" style="display: flex;flex-direction: row;justify-content: flex-start;">
+                                    ${[1,2,3,4,5].map(i => `<span class="estrela ${i <= parseInt(jogo.avaliacao) ? "selecionada" : "naoselecionada"}">&#9733;</span>`).join('')}
+                                </div>
+                                <p class="mt-2"><strong>Recomendado:</strong> ${jogo.recomendado === "sim" ? "Sim" : "Não"}</p>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(section);
+                });
+            }
+        }
+        window.onload = carregarJogosTT;
+    </script>
+      <script>
+function criarpost() {
+    let nomejogo = document.getElementById('nome_jogo');
+    let imgjogo = document.getElementById('img_jogo');
+    let sobrejogo = document.getElementById('inputSobreJogo');
+    let avaliacaojogo = (document.querySelectorAll(".estrela.selecionada")).length;
+
+    let comentariojogo = document.getElementById('floatingTextarea2');
+    let recomendadojogo = document.getElementById('recomendado_jogo');
+
+    if (!nomejogo.value || !imgjogo.value) {
+        alert("Por favor, preencha os campos de nome e imagem do jogo!");
+        return;
+    }
+    const id = Date.now();
+    const nome = nomejogo.value;
+    const sobre = sobrejogo.value;
+    const capa = imgjogo.value;
+    const avaliacao = avaliacaojogo;
+    const comentarios = comentariojogo.value;
+    const recomendado = recomendadojogo.value;
+
+    if (!nome || !sobre) {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
+
+    const novaJogo = {
+        id,
+        nome,
+        sobre,
+        capa,
+        avaliacao,
+        comentarios,
+        recomendado
+    };
+
+    nomejogo.value = "";
+    imgjogo.value = "";
+
+    // Salva na lista geral de jogos (para pesquisa)
+    let jogos = JSON.parse(localStorage.getItem("jogos")) || [];
+    jogos.push(novaJogo);
+    localStorage.setItem("jogos", JSON.stringify(jogos));
+
+    // Salva também em "minha_biblioteca" (para aparecer ao acessar pelo menu)
+    let minha_biblioteca = JSON.parse(localStorage.getItem("minha_biblioteca")) || [];
+    minha_biblioteca.push(novaJogo);
+    localStorage.setItem("minha_biblioteca", JSON.stringify(minha_biblioteca));
+
+    localStorage.removeItem("jogosPesquisados");
+    window.location.href = "tt.html";
+}
+                  
+         function avaliar(event) {
+             const estrelas = document.querySelectorAll(".estrela");
+             let selecionada = false;
+             estrelas.forEach((estrela, index) => {
+             if (estrela === event.target) {
+             selecionada = true;
+             }
+             estrela.classList.toggle("selecionada", selecionada);
+             });
+         }
+         
+         document.querySelectorAll(".estrela").forEach(estrela => {
+             estrela.addEventListener("click", avaliar);
+         });
+         
+         
+      </script>
+      <script>
+         document.querySelectorAll('.submenu-toggle').forEach(btn => {
+           btn.addEventListener('click', () => {
+             const submenu = btn.nextElementSibling;
+             submenu.classList.toggle('show');
+           });
+         });
+      
+  window.onload = () => {
+    const darkMode = localStorage.getItem("darkMode");
+    if (darkMode === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
+  };
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+
+    if (isDark) {
+      localStorage.setItem("darkMode", "enabled");
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+    }
+  }
+</script>
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"></script>
+      <script>
+         function avisoPostCriado(tituloPost){
+           let toastLiveExample = document.getElementById('liveToast');
+           let toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+           document.getElementById("tituloPost").innerText = tituloPost;
+           toastBootstrap.show();
+         }
+         
+      </script>
+      </main>
+   </body>
+</html>

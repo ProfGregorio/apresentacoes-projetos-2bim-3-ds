@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>atividades do dia a dia</title>
+ </head>
+ <body>
+     <h1>Lista do dia a dia</h1>
+     <input id="compromisso" placeholder="Compromisso">
+     <input type="button" value="Adicionar" onclick="adicionar()">
+     <ul id="lista"></ul>
+
+     <script>
+        function adicionar(){
+            let compromisso = document.getElementById('compromisso').value
+            let tag_ul = document.getElementById("lista")
+
+            let timestamp = Date.now(); 
+            let tag_li = document.createElement('li');
+            tag_li.innerHTML = `${compromisso}` 
+            tag_li.setAttribute("id", timestamp);
+            tag_li.innerHTML = `<input type='checkbox' onclick="feito()">${compromisso}<a type="button" value="Editar" id="edittext" onclick="editar(${timestamp})"><img class="imgcompromisso" src="../image/iconeditar.webp"></a><input type="button" value="Excluir" onclick="excluir(${timestamp})">` 
+            tag_ul.appendChild(tag_li)
+
+        }
+        function feito(){
+
+        }
+
+        function excluir(idElemento){
+            console.log("Funcionou")
+            let adc = document.getElementById(idElemento);
+            adc.remove()
+        }
+
+        function editar(idElemento){
+            
+        }
+    </script>
+</body>
+</html>

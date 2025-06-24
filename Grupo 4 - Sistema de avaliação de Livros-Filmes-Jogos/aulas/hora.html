@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="pedir" name="pedir" onchange="hora()" min="0" max="23" >
+
+    <p id="saudacao" style="color: white; font-size: 60px; margin: 0%;" ></p>
+    <p id="mostrahora" style="color: rgb(255, 255, 255); font-size: 60px; margin: 0%;"></p>
+
+    <script>
+        hora();
+        function hora(){
+            const dia_atual = new Date();
+
+            var consultar_hora = document.getElementById('pedir').value
+            if (consultar_hora.length==0){
+                consultar_hora = dia_atual.getHours();
+            }
+            var saudacao = document.getElementById('saudacao')
+            
+
+            var exibirhora = document.getElementById('mostrahora')
+
+            var dia = "";
+            console.log(consultar_hora);
+
+            if (consultar_hora >= 6 && consultar_hora <= 12){
+                document.body.style.backgroundImage = "url('../img/m.jpg')";
+                document.body.style.backgroundSize='100%';
+                dia = "bom dia"
+                console.log(dia)
+            }
+            else if (consultar_hora >= 12 && consultar_hora <= 18){
+                dia = "boa tarde"
+
+                document.body.style.backgroundImage = "url('../img/tarde.jpg')";
+                document.body.style.backgroundSize='100%';
+            }
+            else if (consultar_hora >= 18 && consultar_hora <= 23){
+                dia = "boa noite"
+                document.body.style.backgroundImage = "url('../img/noite.jpg')";
+                document.body.style.backgroundSize='100%';
+
+            }
+            else if (consultar_hora >= 0 && consultar_hora <=6){
+                dia = "boa madrugada"
+
+                document.body.style.backgroundImage = "url('../img/madru.jpg')";
+                document.body.style.backgroundSize='100%';
+            }
+            
+            saudacao.innerHTML = dia
+            exibirhora.innerHTML = `${consultar_hora}:${dia_atual.getMinutes()}` 
+        }
+        
+    </script>
+    
+</body>
+</html>
