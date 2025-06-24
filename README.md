@@ -1,6 +1,7 @@
 # Atividade de Encerramento do 2º Bimestre/2025 – Desenvolvimento de Projetos - Demandas
 ## Turma 3ºDS - E.E. Joaquim Izidoro Marins
 ### Prof. Gregorio Queiroz
+#### [Link dos projetos](https://profgregorio.github.io/apresentacoes-projetos-2bim-3-ds/)
 ---
 Como forma de consolidar os conhecimentos adquiridos ao longo do bimestre nas aulas de **HTML, CSS e JavaScript**, os alunos foram desafiados a criar um site/sistema completo sobre um tema direcionado pelo professor. O objetivo da atividade foi oferecer uma experiência prática de desenvolvimento web, permitindo que cada estudante aplicasse e aprimorasse os conceitos trabalhados em sala de aula em um projeto autoral e criativo.
 
